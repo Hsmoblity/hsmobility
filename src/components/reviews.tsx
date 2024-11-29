@@ -59,7 +59,7 @@ export function Reviews() {
 
                             <div className="flex flex-col">
                                 <div className="relative -left-10 text-black font-bold text-xl">
-                                    "When he went downstairs for the first time in 15 months - he cried - it was a touching moment for both of us."
+                                    &quot;When he went downstairs for the first time in 15 months - he cried - it was a touching moment for both of us.&quot;
                                 </div>
 
                             </div>
@@ -76,7 +76,7 @@ export function Reviews() {
 
                             <div className="flex flex-col">
                                 <div className="relative -left-10 text-black font-bold text-xl">
-                                    "Just wanted you to know how happy and satisfied we are with our Acorn chairlift. It fits into our decor beautifully and does all it is supposed to do. The installer was excellent. Efficient and pleasant and spent the time instructing us on how to use the chair."
+                                    &quot;Just wanted you to know how happy and satisfied we are with our Acorn chairlift. It fits into our decor beautifully and does all it is supposed to do. The installer was excellent. Efficient and pleasant and spent the time instructing us on how to use the chair.&quot;
                                 </div>
 
                             </div>
@@ -93,7 +93,7 @@ export function Reviews() {
 
                             <div className="flex flex-col">
                                 <div className="relative -left-10 text-black font-bold text-xl">
-                                    "It has taken great strain off of my husband trying to go up and down the stairs with COPD. Thank you!"
+                                    &quot;It has taken great strain off of my husband trying to go up and down the stairs with COPD. Thank you!&quot;
                                 </div>
 
                             </div>
@@ -111,7 +111,7 @@ export function Reviews() {
 
                             <div className="flex flex-col">
                                 <div className="relative -left-10 text-black font-bold text-xl">
-                                    "I thought I'd lose my independence once I had a stairlift fitted. In fact, it's the total opposite. I have more confidence and wish I'd had one installed sooner in my home!"
+                                    &quot;I thought I&apos;d lose my independence once I had a stairlift fitted. In fact, it&apos;s the total opposite. I have more confidence and wish I&apos;d had one installed sooner in my home!&quot;
                                 </div>
 
                             </div>
