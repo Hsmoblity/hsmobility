@@ -53,23 +53,24 @@ export default function Form() {
     })
     const processForm: SubmitHandler<Inputs> = async (data) => {
         try {
-            // const response = await fetch("https://api.web3forms.com/submit", {
-            //     method: "POST",
-            //     headers: {
-            //         "Content-Type": "application/json",
-            //         Accept: "application/json",
-            //     },
-            //     body: JSON.stringify({
-            //         ...data,
-            //         access_key: "3c01bf6a-1e01-47f6-8337-e2155b97fa50",
-            //     }),
-            // });
-            // if (!response.ok) {
-            //     throw new Error("Submission failed");
-            // }
-            // const result = await response.json();
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                },
+                body: JSON.stringify({
+                    ...data,
+                    access_key: "3c01bf6a-1e01-47f6-8337-e2155b97fa50",
+                }),
+            });
+            if (!response.ok) {
+                throw new Error("Submission failed");
+            }
+            const result = await response.json();
+            console.log(result);
             reset();
-            setCurrentStep(currentStep + 1);
+
         } catch (error) {
             console.error("Error submitting form:", error);
             alert("There was an error submitting the form.");
