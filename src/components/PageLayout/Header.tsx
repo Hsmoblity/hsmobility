@@ -1,7 +1,3 @@
-// import styles from "styles/components/PageLayout/Header.module.css";
-import { FaShoppingCart, FaUser, FaHeart, FaSearch } from "react-icons/fa";
-
-import Link from "next/link";
 import Cart from "./Cart/Cart";
 import { useCallback, useContext, useEffect, useState } from "react";
 import CartItemsContext from "contexts/cartItemsContext";
@@ -9,6 +5,7 @@ import CartVisibilityContext from "contexts/cartVisibilityContext";
 import { CartProduct } from "lib/interfaces";
 import { MdShoppingCart } from "react-icons/md";
 import { DrawOutlineButton } from "components/btn";
+import Drawer from "components/drawer";
 
 const Header = () => {
   const { cart } = useContext(CartItemsContext);
@@ -18,7 +15,7 @@ const Header = () => {
       (count += item.quantity ? item.quantity : 1),
     0
   );
-  const menuItems = ["Shop All", "Acorn Stairlift", "Contact us", "Reviews", "FAQs"];
+  const menuItems = ["Shop All", "Acorn Stairlifts", "Contact us", "Reviews", "FAQs"];
   const [lastScrollY, setLastScrollY] = useState(0);
   const [scrollDirection, setScrollDirection] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -54,9 +51,32 @@ const Header = () => {
   return (
     <>
       <Cart />
-      <header className={`flex flex-row justify-between z-50 md:px-4 md:py-0 p-1 font-medium leading-4 w-full capitalize transition-transform duration-500  ${isScrolled ? `bg-[#f1ebe0] ` : `bg-sky-300 bg-[url('/nnnoise.svg')] bg-cover bg-repeat`}`}>
+      <div className="flex md:hidden items-center ml-6 mt-6">
+        <img
+          src="/logo.png"
+          alt="Logo"
+          className="h-10 object-contain"
+        />
+      </div>
+      <div className="md:hidden absolute top-5 right-5 flex flex-row">
+        <button onClick={toggleCartVisibility} className="relative z-50 outline-0 text-white items-start mt-2 mr-3 rounded-md border-1  flex flex-row" >
 
-        <div className="w-full mx-auto flex justify-between py-4 max-w-7xl px-6">
+          <MdShoppingCart
+            color="black"
+            className="ml-2"
+            size={50}
+          />
+          {cartLength > 0 && (
+            <span className="absolute w-4 h-4 text-black text-xs border border-solid border-gray-500 rounded-full flex flex-row justify-center items-center p-2 -left-1 -bottom-1 bg-white">
+              {cartLength}
+            </span>
+          )}
+        </button>
+        <Drawer />
+      </div>
+      <header className={`md:flex hidden flex-row justify-between z-50 md:px-4 md:py-0 p-1 font-medium leading-4 w-full capitalize transition-transform duration-500  ${isScrolled ? `bg-[#f1ebe0] ` : `bg-sky-300 bg-[url('/nnnoise.svg')] bg-cover bg-repeat`}`}>
+
+        <div className="w-full mx-auto flex justify-between py-2 max-w-7xl px-6">
           {/* Logo */}
 
           <div className="flex items-center">

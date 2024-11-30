@@ -3,7 +3,7 @@ import { RiChatQuoteFill, RiChatQuoteLine } from "react-icons/ri";
 import { AnimatedSubscribeButton } from "./btn";
 import { MdCheckCircleOutline } from "react-icons/md";
 import { FaChevronRight, FaQuoteLeft } from "react-icons/fa";
-import { InfiniteSlider } from "./image-slider";
+import { InfiniteSlider } from "./marqee";
 
 export function Reviews() {
     return (
@@ -21,23 +21,12 @@ export function Reviews() {
                     <div className="border-[var(--your-border-color)] rounded mb-4">
                         {/* Placeholder for border */}
                     </div>
-                    <AnimatedSubscribeButton
-                        buttonColor="#000000"
-                        buttonTextColor="#ffffff"
-                        subscribeStatus={false}
-                        initialText={
-                            <span className="group inline-flex items-center">
-                                Find Out More{" "}
-                                <FaChevronRight className="ml-1 size-4 transition-transform duration-300 group-hover:translate-x-3" />
-                            </span>
-                        }
-                        changeText={
-                            <span className="group inline-flex items-center">
-                                <MdCheckCircleOutline className="mr-2 size-4" />
-                                continue to reviews{" "}
-                            </span>
-                        }
-                    />
+                    <button className="relative inline-flex h-12 overflow-hidden rounded-full p-[2px] focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50">
+                        <span className="absolute  inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#a2aeff_0%,#3749be_50%,#a2aeff_100%)] " />
+                        <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-black px-8 py-1 text-md uppercase font-medium  text-white backdrop-blur-3xl">
+                            Get a FREE Quote
+                        </span>
+                    </button>
                 </div>
 
                 {/* Review Section */}

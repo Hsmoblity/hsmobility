@@ -9,12 +9,12 @@ const client = contentful.createClient({
 export const getProductImages = async (productId: string) => {
 	try {
 		const entries = await client.getEntries({
-			content_type: 'product',
+			content_type: 'products',
 			include: 1,
 		})
 
 		const product = entries.items.find((item: any) => {
-			return item.fields.productId === productId
+			return item.fields.slug === productId
 		})
 
 		if (!product) {
@@ -26,8 +26,6 @@ export const getProductImages = async (productId: string) => {
 			title: image.fields.title,
 			description: image.fields.description,
 			url: image.fields.file.url,
-			width: image.fields.file.details.image.width,
-			height: image.fields.file.details.image.height,
 		}))
 
 		return images || []

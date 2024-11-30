@@ -1,4 +1,4 @@
-import "styles/globals.css";
+import "/globals.css";
 import type { AppProps } from "next/app";
 import { useEffect, useReducer, useState } from "react";
 import PageLayout from "components/PageLayout/PageLayout";
@@ -11,7 +11,8 @@ import { CookieCart, CartProduct } from "lib/interfaces";
 import Cookies from "js-cookie";
 // import client from "lib/sanity/client";
 import { useRouter } from "next/router";
-import { getProductBySlug } from "lib/contentful/getProducts";
+import { getProducts } from "lib/contentful/contentful";
+
 
 const cartItems = Cookies.get("_cart");
 
@@ -26,15 +27,14 @@ function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const [cart, dispatch] = useReducer(cartReducer, []);
   const [cartVisibility, setCartVisibilty] = useState(false);
-
-  const appendTotalItemsField = (products: CartProduct[]) => {
-    return products.map((product: CartProduct, i) => {
-      return {
-        ...product,
-        quantity: parsedCartItems[i].quantity ? parsedCartItems[i].quantity : 1
-      };
-    });
-  };
+  // const appendTotalItemsField = (products: CartProduct[]) => {
+  //   return products.map((product: CartProduct, i) => {
+  //     return {
+  //       ...product,
+  //       quantity: parsedCartItems[i].quantity ? parsedCartItems[i].quantity : 1
+  //     };
+  //   });
+  // };
 
   const toggleCartVisibility = () => {
     setCartVisibilty(!cartVisibility);
@@ -42,21 +42,24 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   useEffect(() => {
     const fetchCartProducts = async () => {
-      if (parsedCartItems) {
-        const cartProducts = await getProductBySlug(slugs)
+      const cartProducts = await getProducts('');
+      return console.log(cartProducts);
+      // if (parsedCartItems) {
 
-        if (!cartProducts) {
-          throw Error("Sorry, something went wrong.");
-        }
 
-        dispatch({
-          type: Types.bulkAdd,
-          payload: cartProducts && appendTotalItemsField(cartProducts)
-        });
-      }
+      //   // if (!cartProducts) {
+      //   //   throw Error("Sorry, something went wrong.");
+      //   // }
+
+      //   // dispatch({
+      //   //   type: Types.bulkAdd,
+      //   //   payload: cartProducts && appendTotalItemsField(cartProducts)
+      //   // });
+      // }
     };
 
-    if (router.asPath !== "/success") fetchCartProducts();
+    // if (router.asPath !== "/success") 
+    fetchCartProducts();
   }, []);
 
   return (

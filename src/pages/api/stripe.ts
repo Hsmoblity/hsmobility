@@ -30,16 +30,16 @@ export default async function handler(
         //   }
         // ],
         line_items: req.body.items.map((item: CartProduct) => {
-          const imgUrl = (item.featured_image);
+          const imgUrl = (item.featuredImage);
 
           return {
             price_data: {
               currency: "CAD",
               product_data: {
-                name: item.name,
+                name: item.title,
                 images: [imgUrl]
               },
-              unit_amount: (item.on_sale ? item.sale_price : item.price) * 100
+              unit_amount: (item.price)
             },
             adjustable_quantity: {
               enabled: true,

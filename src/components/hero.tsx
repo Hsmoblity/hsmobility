@@ -1,19 +1,15 @@
 import Image from "next/image";
 
-
-
 function Hero() {
-
-
     return (
         <>
             <section className="relative z-10 w-full bg-sky-300 bg-[url('/nnnoise.svg')] bg-cover bg-repeat px-6 py-24 xl:px-10 flex flex-col">
                 <div className="flex md:flex-row flex-col">
-                    <h1 className="text-left ml-20 w-full pt-10 text-black font-mono font-semibold text-6xl leading-tight -space-y-10">
+                    <h1 className="text-left md:ml-20 w-full pt-10  tracking-wider text-black font-mono font-semibold md:text-6xl text-5xl my-6 leading-tight -space-y-10">
                         Express Your<br />
                         <span className="inline-block border-t-8 border-black w-60 pb-5"></span> Freedom with HS Mobility,
                     </h1>
-                    <div className="md:block relative hidden mt-6 h-64 w-full max-w-[660px] justify-end mx-auto overflow-hidden  md:h-80 lg:h-[420px]">
+                    <div className="block relative mt-6 h-96 items-center w-full max-w-[660px] justify-end mx-auto overflow-hidden  md:h-80 lg:h-[420px]">
                         <div className="h-24 w-24 border-4 bg-gray-500 absolute top-8 left-12 rounded-full">
                             <Image
                                 src="/face1.jpg"
@@ -41,7 +37,7 @@ function Hero() {
 
                             />
                         </div>
-                        <div className="text-2xl absolute top-16 mt-20 px-14"> Empowering 1000+ Satisfied Customers to Stay Independent with Exceptional mobility products</div>
+                        <div className="text-2xl absolute top-16 mt-20 md:px-14 my-10"> Empowering 1000+ Satisfied Customers to Stay Independent with Exceptional mobility products</div>
                         <button className="absolute top-64 left-12 inline-flex h-12 overflow-hidden rounded-full p-[2px] focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50">
                             <span className="absolute  inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#a2aeff_0%,#3749be_50%,#a2aeff_100%)] " />
                             <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-black px-8 py-1 text-md uppercase font-medium  text-white backdrop-blur-3xl">
@@ -53,7 +49,7 @@ function Hero() {
 
 
                 <div className="flex md:flex-row flex-col">
-                    <div className="relative mt-6 h-64 w-full max-w-[860px] overflow-hidden  bg-transparent   md:h-80 lg:h-[420px]">
+                    <div className="relative mt-10 h-64 w-full max-w-[860px] overflow-hidden  bg-transparent   md:h-80 lg:h-[420px]">
 
                         <Image
                             src="/acorn-stairlifts-home-banner-new.png"
@@ -68,8 +64,8 @@ function Hero() {
                     </div>
                     <div className="relative  w-full max-w-[660px] justify-end mx-auto  md:h-80 lg:h-[420px]">
                         <div className="mt-10">
-                            <h2 className="text-3xl font-semibold text-gray-800">Explore our Bestsellers</h2>
-                            <div className="flex gap-8 mt-6">
+                            <h2 className="text-3xl text-center md:text-left font-semibold text-gray-800">Explore our Bestsellers</h2>
+                            <div className="flex md:flex-row flex-col gap-8 mt-6">
                                 <div className="flex flex-col items-center border-[0.2px] pb-2">
                                     <img
                                         loading="lazy"
@@ -78,7 +74,7 @@ function Hero() {
                                         className="object-cover w-64 aspect-[1.61] rounded-lg"
                                     />
                                     <p className="text-xl uppercase text-gray-800 font-bold m-3">Acorn Straight Stairlifts</p>
-                                    <p className="text-lg text-slate-600 m-3 line-clamp-3">The ultimate staircase solution, giving you the full use of the home you love.</p>
+                                    <p className="text-lg text-slate-600 md:m-3 mx-10  line-clamp-3">The ultimate staircase solution, giving you the full use of the home you love.</p>
                                     <button className="relative inline-flex h-12 overflow-hidden rounded-full p-[2px] focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50">
                                         <span className="absolute  inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#a2aeff_0%,#3749be_50%,#a2aeff_100%)] " />
                                         <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-black px-8 py-1 text-md uppercase font-medium  text-white backdrop-blur-3xl">
@@ -94,7 +90,7 @@ function Hero() {
                                         className="object-cover w-80 aspect-[1.61] rounded-lg"
                                     />
                                     <p className="text-xl uppercase text-gray-800 font-bold m-3">Acorn Curved Stairlifts</p>
-                                    <p className="text-lg text-slate-600 m-3">A comfortable and reliable ride designed for any curved staircases</p>
+                                    <p className="text-lg text-slate-600 md:m-3 mx-10 ">A comfortable and reliable ride designed for any curved staircases</p>
                                     <button className="relative inline-flex h-12 overflow-hidden rounded-full p-[2px] focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50">
                                         <span className="absolute  inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#a2aeff_0%,#3749be_50%,#a2aeff_100%)] " />
                                         <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-black px-8 py-1 text-md uppercase font-medium  text-white backdrop-blur-3xl">

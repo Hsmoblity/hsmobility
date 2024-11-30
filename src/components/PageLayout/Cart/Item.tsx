@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import styles from "styles/components/PageLayout/Cart/Item.module.css";
 import { CartProduct } from "lib/interfaces";
 import Image from "next/image";
 import CartItemsContext from "contexts/cartItemsContext";
@@ -12,7 +11,7 @@ interface ItemProps {
 
 const Item: React.FC<ItemProps> = ({ product }) => {
   const { dispatch } = useContext(CartItemsContext);
-  const { slug, featured_image, name, on_sale, sale_price, price, quantity } =
+  const { slug, featuredImage, title, price, quantity } =
     product;
 
   const removeWholeProduct = () => {
@@ -37,22 +36,22 @@ const Item: React.FC<ItemProps> = ({ product }) => {
   };
 
   return (
-    <div className={styles.item}>
+    <div>
       <div className="flex flex-row mb-3 justify-between">
         <div className="w-4/5 flex flex-row">
           <Image
-            src={'/..'}
+            src={featuredImage.fields.file.url}
             width={64}
             height={64}
             className="clickable-img"
             quality={100}
-            alt={name}
+            alt={title}
           />
-          <span className="text-lg ml-4 text-white">{name}</span>
+          <span className="text-lg ml-4 text-white">{title}</span>
         </div>
         <div className="w-1/5">
           <span className="text-lg text-gray-300">
-            ${(on_sale ? Number(sale_price) : price) * Number(quantity)}
+            ${price * Number(quantity)}
           </span>
         </div>
       </div>

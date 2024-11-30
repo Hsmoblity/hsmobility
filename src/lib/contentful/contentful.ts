@@ -6,16 +6,26 @@ const client = contentful.createClient({
 	accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN ?? '',
 })
 
-export const getPage = async (slug: string) => {
-	const page = await client.getEntries({
-		content_type: 'pageModel',
-		include: 3,
-		'fields.slug': slug,
-	})
+export const getProducts = async (slug: string) => {
+	let products
+	if (slug != "") {
+		products = await client.getEntries({
+			content_type: 'products',
+			'fields.slug': slug,
+		})
+	} else {
+		products = await client.getEntries({
+			content_type: 'products',
+		})
+	}
 
 	// Convert the result to a plain object
-	const plainPage = JSON.parse(JSON.stringify(page.items[0].fields))
+	const plainProducts = JSON.parse(JSON.stringify(products))
+	return plainProducts
+}
 
-	return plainPage
+export const getProductBySlug = async (slug: string) => {
+	const products = await getProducts('')
+	return products.find((product: any) => product.slug === slug) || null
 }
 

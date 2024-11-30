@@ -1,6 +1,5 @@
 import * as React from "react";
 import { FaMinusCircle, FaPlusCircle } from "react-icons/fa";
-import { RiArrowDropDownLine, RiArrowDropUpLine } from "react-icons/ri";
 
 
 function FAQ() {
@@ -44,7 +43,7 @@ function FAQ() {
 
             <div className="max-w-screen-xl mx-auto  py-8 px-5">
                 <div className="text-center mb-8">
-                    <h1 className="text-6xl font-bold text-gray-800">Frequently Asked Questions</h1>
+                    <h2 className="text-6xl font-bold text-gray-800">Frequently Asked Questions</h2>
                 </div>
 
                 {/* FAQ Layout */}
