@@ -12,7 +12,7 @@ const ProductItem: React.FC<ProductItemProps> = ({ product }) => {
   return (
     <div>
       <Link href={`/product/${product.slug}`}>
-        <a className="relative w-full h-full">
+        <div className="relative w-full h-full">
           <div className="w-full h-64 md:mb-4 mb-2 overflow-hidden relative">
             <Image
               src={product.productPictures[0].fields.file.url}
@@ -22,10 +22,10 @@ const ProductItem: React.FC<ProductItemProps> = ({ product }) => {
               alt={product.title}
             />
           </div>
-        </a>
+        </div>
       </Link>
       <Link href={`/product/${product.slug}`}>
-        <a className="relative w-full h-full">
+        <div className="relative w-full h-full">
           <div className="w-full px-1 flex flex-col items-center">
             <h3 className="text-lg uppercase font-medium text-center mb-3">
               {product.title}
@@ -42,7 +42,7 @@ const ProductItem: React.FC<ProductItemProps> = ({ product }) => {
 
             </div>
           </div>
-        </a>
+        </div>
       </Link>
     </div>
   );

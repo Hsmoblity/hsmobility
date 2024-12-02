@@ -1,4 +1,5 @@
 import { ProductSchema } from "lib/interfaces";
+import Link from "next/link";
 import { FaShoppingCart } from "react-icons/fa";
 
 
@@ -9,7 +10,7 @@ const Card = ({ title, shortDescription, affiliate, slug, price, featuredImage, 
 
   return (
     <article className="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl transform hover:scale-105 duration-300">
-      <a href={`/product/${slug}`}>
+      <Link href={`/product/${slug}`}>
         <div className="relative flex items-end overflow-hidden rounded-xl">
           <img
             src={imageSrc}
@@ -45,7 +46,7 @@ const Card = ({ title, shortDescription, affiliate, slug, price, featuredImage, 
             )}
           </div>
         </div>
-      </a>
+      </Link>
     </article>
   );
 };

@@ -32,7 +32,7 @@ function Banner() {
                     {/* Call to Action Section */}
                     <button className="relative inline-flex text-nowrap h-12  overflow-hidden rounded-full p-[2px] focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50">
                         <span className="inline-flex text-nowrap h-full w-full cursor-pointer items-center justify-center rounded-full bg-black border-gray-400 border-b-4 border-r-4 px-8 py-1 text-md uppercase font-medium  text-white backdrop-blur-3xl">
-                            <a href="#shop">Check out</a>
+                            <Link href="#shop">Check out</Link>
                         </span>
                     </button>
                 </div>

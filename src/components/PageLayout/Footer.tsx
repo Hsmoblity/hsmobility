@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FaFacebook, FaTwitter, FaInstagram, FaSpotify, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
@@ -37,8 +38,8 @@ const Footer = () => {
           <div className="text-center">
             <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
             <p className="text-lg text-gray-700">
-              All enquiries: <a href="mailto:hsmobilityinc@gmail.com" className="text-sky-600">hsmobilityinc@gmail.com</a><br />
-              {/* PR: <a href="mailto:grind@emergelimited.com" className="text-blue-600">grind@emergelimited.com</a> */}
+              All enquiries: <Link href="mailto:hsmobilityinc@gmail.com" className="text-sky-600">hsmobilityinc@gmail.com</Link><br />
+              {/* PR: <Link href="mailto:grind@emergelimited.com" className="text-blue-600">grind@emergelimited.com</Link> */}
             </p>
           </div>
 
@@ -62,13 +63,13 @@ const Footer = () => {
       {/* Bottom Line */}
       <p className="text-md text-gray-700 text-center my-4">
         &copy; {d.getFullYear()} Designed and developed by{" "}
-        <a
+        <Link
           href="https://harbourfrontwebdesigns.com/"
           target="_blank"
           rel="noreferrer"
         >
           <b className="underline">Harbourfront Web Designs</b>
-        </a>
+        </Link>
       </p>
     </div>
   );

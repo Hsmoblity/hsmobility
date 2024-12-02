@@ -1,5 +1,6 @@
 import { AnimatedSubscribeButton } from "components/btn";
 import { Carousel, CarouselContent, CarouselItem } from "components/pictureCarousal";
+import Link from "next/link";
 import { useState } from "react";
 
 import { FaBuyNLarge, FaCartPlus } from "react-icons/fa";
@@ -89,12 +90,12 @@ const ProductHero: React.FC<ProductHeroProps> = ({ product }) => {
                         {/* Price and Add to Cart */}
                         <div className="flex justify-between items-center mx-6">
                             <span className="group inline-flex items-center">
-                                <a className="text-sm underline" href="#contact-us" >learn more</a>
+                                <Link className="text-sm underline" href="#contact-us" >learn more</Link>
                             </span>
 
                             <button className="relative inline-flex text-nowrap h-12 mt-4 overflow-hidden rounded-full p-[2px] focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50">
                                 <span className="inline-flex text-nowrap  h-full w-full cursor-pointer items-center justify-center rounded-full bg-black border-gray-400 border-b-4 border-r-4 px-8 py-1 text-md uppercase font-medium  text-white backdrop-blur-3xl">
-                                    <a className="text-sm" href="#contact-us" >Get a FREE quote</a>
+                                    <Link className="text-sm" href="#contact-us" >Get a FREE quote</Link>
                                 </span>
                             </button>
                         </div>
@@ -114,7 +115,7 @@ const ProductHero: React.FC<ProductHeroProps> = ({ product }) => {
                                     <p className="text-lg text-slate-600 m-2">The Acorn 180 stairlift for curved staircases</p>
                                     <button className="relative inline-flex text-nowrap h-12 mt-4 overflow-hidden rounded-lg">
                                         <span className="group inline-flex items-center bg-black text-white px-4 py-2">
-                                            <a href="/product/acorn-stairlifts-acorn-130-straight-stairlift">Shop Now{" "}</a>
+                                            <Link href="/product/acorn-stairlifts-acorn-130-straight-stairlift">Shop Now{" "}</Link>
                                             <FaCartPlus className="ml-1 size-4 transition-transform duration-300 group-hover:translate-x-3" />
                                         </span>
                                     </button>
@@ -132,7 +133,7 @@ const ProductHero: React.FC<ProductHeroProps> = ({ product }) => {
                                     <p className="text-lg text-slate-600 m-2">The Acorn 160 stairlift for  outdoor spaces</p>
                                     <button className="relative inline-flex text-nowrap h-12 mt-4 overflow-hidden rounded-lg">
                                         <span className="group inline-flex items-center bg-black text-white px-4 py-2">
-                                            <a href="/product/acorn-stairlifts-acorn-130-straight-stairlift">Shop Now{" "}</a>
+                                            <Link href="/product/acorn-stairlifts-acorn-130-straight-stairlift">Shop Now{" "}</Link>
                                             <FaCartPlus className="ml-1 size-4 transition-transform duration-300 group-hover:translate-x-3" />
                                         </span>
                                     </button>

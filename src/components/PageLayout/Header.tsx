@@ -6,6 +6,7 @@ import { CartProduct } from "lib/interfaces";
 import { MdShoppingCart } from "react-icons/md";
 import { DrawOutlineButton } from "components/btn";
 import Drawer from "components/drawer";
+import Link from "next/link";
 
 const Header = () => {
   const { cart } = useContext(CartItemsContext);
@@ -58,13 +59,13 @@ const Header = () => {
     <>
       <Cart />
       <div className={`py-2 transition-transform duration-500  ${isScrolled ? `bg-[#f1ebe0] ` : `bg-[url('/nnnoise.svg')] bg-cover bg-repeat`}`}>
-        <a href="/" className="flex md:hidden items-center ml-6 mt-6">
+        <Link href="/" className="flex md:hidden items-center ml-6 mt-6">
           <img
             src="/logo.png"
             alt="Logo"
             className="h-10 object-contain"
           />
-        </a>
+        </Link>
         <div className="md:hidden absolute top-5 right-5 flex flex-row ">
           <button onClick={toggleCartVisibility} className="relative z-50 outline-0 text-white items-start mt-2 mr-3 rounded-md border-1  flex flex-row" >
 
@@ -87,19 +88,19 @@ const Header = () => {
         <div className="w-full mx-auto flex justify-between  max-w-7xl px-6">
           {/* Logo */}
 
-          <a href="/" className="flex items-center">
+          <Link href="/" className="flex items-center">
             <img
               src="/logo.png"
               alt="Logo"
               className="h-10 object-contain"
             />
-          </a>
+          </Link>
           {/* Navigation Menu */}
           <nav className="flex space-x-6 text-lg">
             {menuItems.map((item, index) => (
-              <a key={index} href={item.href} className="uppercase font-bold font-poppins tracking-widest">
+              <Link key={index} href={item.href} className="uppercase font-bold font-poppins tracking-widest">
                 <DrawOutlineButton>{item.name}</DrawOutlineButton>
-              </a>
+              </Link>
             ))}
           </nav>
 

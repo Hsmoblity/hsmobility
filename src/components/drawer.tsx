@@ -127,7 +127,7 @@ const Drawer: React.FC = () => {
                             <p className="text-lg text-white">
 
                                 3495 Rebecca St<br /> #207 Oakville, ON<br />L6L 6X9<br />
-                                <a href="mailto:hsmobilityinc@gmail.com" className="text-xl text-sky-400">hsmobilityinc@gmail.com</a><br />
+                                <Link href="mailto:hsmobilityinc@gmail.com" className="text-xl text-sky-400">hsmobilityinc@gmail.com</Link><br />
                             </p>
                         </div>
                     </li>

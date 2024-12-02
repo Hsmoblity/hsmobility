@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 function Hero() {
     return (
@@ -40,7 +41,7 @@ function Hero() {
                         <div className="text-2xl relative top-16 mt-20 md:px-14 my-10"> Empowering 1000+ Satisfied Customers to Stay Independent with Exceptional mobility products</div>
                         <button className="relative top-14 left-12 inline-flex text-nowrap h-12 overflow-hidden rounded-full p-[2px] focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50">
                             <span className="inline-flex text-nowrap h-full w-full cursor-pointer items-center justify-center rounded-full bg-black border-gray-400 border-b-4 border-r-4 px-8 py-1 text-md uppercase font-medium  text-white backdrop-blur-3xl">
-                                <a href="#reviews" >Learn more</a>
+                                <Link href="#reviews" >Learn more</Link>
                             </span>
                         </button>
                     </div>
@@ -76,7 +77,7 @@ function Hero() {
                                     <p className="text-md text-slate-600 md:mx-3 mx-4 line-clamp-3">The ultimate staircase solution, giving you the full use of the home you love.</p>
                                     <button className="relative inline-flex text-nowrap h-12 mt-4 overflow-hidden rounded-full p-[2px] focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50">
                                         <span className="inline-flex text-nowrap h-full w-full cursor-pointer items-center justify-center rounded-full bg-black border-gray-400 border-b-4 border-r-4 px-8 py-1 text-md uppercase font-medium  text-white backdrop-blur-3xl">
-                                            <a className="text-sm" href="/product/acorn-stairlifts-acorn-180-curved-stairlift" >Check Product</a>
+                                            <Link className="text-sm" href="/product/acorn-stairlifts-acorn-180-curved-stairlift" >Check Product</Link>
                                         </span>
                                     </button>
                                 </div>
@@ -91,7 +92,7 @@ function Hero() {
                                     <p className="text-md text-slate-600 md:mx-3 mx-4 line-clamp-3">A comfortable and reliable ride designed for any curved staircases</p>
                                     <button className="relative inline-flex text-nowrap h-12 mt-4 overflow-hidden rounded-full p-[2px] focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50">
                                         <span className="inline-flex text-nowrap  h-full w-full cursor-pointer items-center justify-center rounded-full bg-black border-gray-400 border-b-4 border-r-4 px-8 py-1 text-md uppercase font-medium  text-white backdrop-blur-3xl">
-                                            <a className="text-sm" href="/product/acorn-stairlifts-acorn-180-curved-stairlift" >Check Product</a>
+                                            <Link className="text-sm" href="/product/acorn-stairlifts-acorn-180-curved-stairlift" >Check Product</Link>
                                         </span>
                                     </button>
                                 </div>
@@ -106,7 +107,7 @@ function Hero() {
                                     <p className="text-md text-slate-600 md:mx-3 mx-4 ">Open up and enjoy your outdoor space with Acorn Stairlifts.</p>
                                     <button className="relative inline-flex text-nowrap h-12 mt-4 overflow-hidden rounded-full p-[2px] focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50">
                                         <span className="inline-flex text-nowrap h-full w-full cursor-pointer items-center justify-center rounded-full bg-black border-gray-400 border-b-4 border-r-4 px-8 py-1 text-md uppercase font-medium  text-white backdrop-blur-3xl">
-                                            <a className="text-sm" href="/product/acorn-stairlifts-acorn-180-curved-stairlift" >Check Product</a>
+                                            <Link className="text-sm" href="/product/acorn-stairlifts-acorn-180-curved-stairlift" >Check Product</Link>
                                         </span>
                                     </button>
                                 </div>
