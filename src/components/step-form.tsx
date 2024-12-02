@@ -102,7 +102,9 @@ export default function Form() {
     }
 
     return (
-        <section className='relative inset-0 flex flex-col  max-w-4xl mx-auto p-10  justify-center'>
+        <section id="contact-us" className='relative inset-0 flex flex-col  max-w-4xl mx-auto p-10  justify-center'>
+            <h2 className="text-6xl text-center font-bold text-gray-800 font-poppins tracking-wide"> Get a FREE Quote</h2>
+            <p className="mx-auto text-xl text-center md:px-20 py-2 mt-4 justify-center max-w-2xl">Simply enter your details below and a trusted representative will be in touch to arrange a home survey and provide <b>your FREE no obligation quotation.</b></p>
             <nav aria-label='Progress' className='py-4'>
                 <ol role='list' className='space-y-4 md:flex md:space-x-10 md:space-y-0'>
                     {steps.map((step, index) => (
@@ -136,8 +138,8 @@ export default function Form() {
                     ))}
                 </ol>
             </nav>
-            <div className='bg-black  shadow-2xl mt-10 700 rounded-lg'>
-                <div className={` p-6  -translate-x-2 shadow-lg shadow-gray-700 -translate-y-2 rounded-lg bg-[#f1ebe0]`}>
+            <div className='bg-gray-800  shadow-2xl mt-10 700 rounded-lg'>
+                <div className={` p-6  -translate-x-2 shadow-md shadow-gray-400 -translate-y-2 rounded-lg bg-[#f1ebe0]`}>
                     {/* steps */}
 
 

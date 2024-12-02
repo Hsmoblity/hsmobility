@@ -3,7 +3,7 @@ import type { PortableTextBlock } from "@portabletext/types";
 export interface ProductSchema {
   title: string;
   slug: string;
-  shortDescription: [PortableTextBlock];
+  shortDescription: string;
   featuredImage: any,
   productPictures: any;
   price: number;

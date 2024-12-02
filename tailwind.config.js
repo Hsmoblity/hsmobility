@@ -14,6 +14,9 @@ module.exports = {
       "2xl": "1536px"
     },
     extend: {
+      fontFamily: {
+        'poppins': ['Poppins'],
+      },
       width: {
         "custom-31": "31.871429%",
         "custom-66": "66%"

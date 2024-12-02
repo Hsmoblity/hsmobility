@@ -39,11 +39,11 @@ function FAQ() {
 
     ];
     return (
-        <div className="bg-inherit">
+        <div id="faq" className="bg-inherit">
 
             <div className="max-w-screen-xl mx-auto  py-8 px-5">
                 <div className="text-center mb-8">
-                    <h2 className="text-6xl font-bold text-gray-800">Frequently Asked Questions</h2>
+                    <h2 className="text-6xl font-bold font-poppins text-gray-800">Frequently Asked Questions</h2>
                 </div>
 
                 {/* FAQ Layout */}
@@ -62,7 +62,7 @@ function FAQ() {
                         </div>
                         <div className="flex flex-col items-center text-center md:text-left">
                             <div className="bg-gray-300 p-4 rounded-lg">
-                                <h3 className="text-xl font-semibold text-gray-800">Straight Stairlift Installation</h3>
+                                <h3 className="text-xl font-semibold font-poppins text-gray-800">Straight Stairlift Installation</h3>
                                 <p className="text-base text-gray-600 mt-2">
                                     All stairlifts fit directly to the staircase, not the wall, so installation is quick and mess-free.
                                 </p>
@@ -70,7 +70,7 @@ function FAQ() {
                         </div>
                         <div className="flex flex-col items-center text-center md:text-left">
                             <div className="bg-gray-300 p-4 rounded-lg">
-                                <h3 className="text-xl font-semibold text-gray-800">Safety and Convenience</h3>
+                                <h3 className="text-xl font-semibold font-poppins text-gray-800">Safety and Convenience</h3>
                                 <p className="text-base text-gray-600 mt-2">
                                     Enjoy peace of mind with a Folding foot rest,
                                     Seat belt,
@@ -82,7 +82,7 @@ function FAQ() {
                         </div>
                         <div className="flex flex-col items-center text-center md:text-left">
                             <div className="bg-gray-300 p-4 rounded-lg">
-                                <h3 className="text-xl font-semibold text-gray-800"> One Year Warrenty </h3>
+                                <h3 className="text-xl font-semibold font-poppins text-gray-800"> One Year Warrenty </h3>
                                 <p className="text-base text-gray-600 mt-2">
                                     Acorn stairlifts comes with Fully comprehensive 12-month warranty. If any component should fail due to faulty manufacture during the first year of ownership, Acorn will send round one of our fully trained service technicians to get your stairlift back to full working order free of charge.
                                 </p>

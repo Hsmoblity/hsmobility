@@ -9,6 +9,12 @@ body {
 html {
   scroll-behavior: smooth;
 }
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://fonts.googleapis.com/css2?family=Acme&display=swap'); /* IE9 Compat Modes */
+}
 
 ::-webkit-scrollbar {
   width: 12px;

@@ -15,7 +15,7 @@ const ProductItem: React.FC<ProductItemProps> = ({ product }) => {
         <a className="relative w-full h-full">
           <div className="w-full h-64 md:mb-4 mb-2 overflow-hidden relative">
             <Image
-              src={'/..'}
+              src={product.productPictures[0].fields.file.url}
               quality={100}
               layout="fill"
               className="clickable-img"

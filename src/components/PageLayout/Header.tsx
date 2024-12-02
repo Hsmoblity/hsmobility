@@ -15,7 +15,13 @@ const Header = () => {
       (count += item.quantity ? item.quantity : 1),
     0
   );
-  const menuItems = ["Shop All", "Acorn Stairlifts", "Contact us", "Reviews", "FAQs"];
+  const menuItems = [
+    { name: "Shop All", href: "#shop" },
+    { name: "Acorn Stairlifts", href: "/product/acorn-stairlifts-acorn-180-curved-stairlift" },
+    { name: "Contact Us", href: "#contact-us" },
+    { name: "Reviews", href: "#reviews" },
+    { name: "FAQs", href: "#faq" },
+  ];
   const [lastScrollY, setLastScrollY] = useState(0);
   const [scrollDirection, setScrollDirection] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -51,46 +57,48 @@ const Header = () => {
   return (
     <>
       <Cart />
-      <div className="flex md:hidden items-center ml-6 mt-6">
-        <img
-          src="/logo.png"
-          alt="Logo"
-          className="h-10 object-contain"
-        />
-      </div>
-      <div className="md:hidden absolute top-5 right-5 flex flex-row">
-        <button onClick={toggleCartVisibility} className="relative z-50 outline-0 text-white items-start mt-2 mr-3 rounded-md border-1  flex flex-row" >
-
-          <MdShoppingCart
-            color="black"
-            className="ml-2"
-            size={50}
+      <div className={`py-2 transition-transform duration-500  ${isScrolled ? `bg-[#f1ebe0] ` : `bg-[url('/nnnoise.svg')] bg-cover bg-repeat`}`}>
+        <a href="/" className="flex md:hidden items-center ml-6 mt-6">
+          <img
+            src="/logo.png"
+            alt="Logo"
+            className="h-10 object-contain"
           />
-          {cartLength > 0 && (
-            <span className="absolute w-4 h-4 text-black text-xs border border-solid border-gray-500 rounded-full flex flex-row justify-center items-center p-2 -left-1 -bottom-1 bg-white">
-              {cartLength}
-            </span>
-          )}
-        </button>
-        <Drawer />
-      </div>
-      <header className={`md:flex hidden flex-row justify-between z-50 md:px-4 md:py-0 p-1 font-medium leading-4 w-full capitalize transition-transform duration-500  ${isScrolled ? `bg-[#f1ebe0] ` : `bg-sky-300 bg-[url('/nnnoise.svg')] bg-cover bg-repeat`}`}>
+        </a>
+        <div className="md:hidden absolute top-5 right-5 flex flex-row ">
+          <button onClick={toggleCartVisibility} className="relative z-50 outline-0 text-white items-start mt-2 mr-3 rounded-md border-1  flex flex-row" >
 
-        <div className="w-full mx-auto flex justify-between py-2 max-w-7xl px-6">
+            <MdShoppingCart
+              color="black"
+              className="ml-2"
+              size={50}
+            />
+            {cartLength > 0 && (
+              <span className="absolute w-4 h-4 text-black text-xs border border-solid border-gray-500 rounded-full flex flex-row justify-center items-center p-2 -left-1 -bottom-1 bg-white">
+                {cartLength}
+              </span>
+            )}
+          </button>
+          <Drawer />
+        </div>
+      </div>
+      <header className={`md:flex hidden flex-row justify-between z-50 md:px-4 md:pb-2 p-1 font-medium  w-full capitalize transition-transform duration-500  ${isScrolled ? `bg-[#f1ebe0] ` : ` bg-[url('/nnnoise.svg')] bg-cover bg-repeat`}`}>
+
+        <div className="w-full mx-auto flex justify-between  max-w-7xl px-6">
           {/* Logo */}
 
-          <div className="flex items-center">
+          <a href="/" className="flex items-center">
             <img
               src="/logo.png"
               alt="Logo"
               className="h-10 object-contain"
             />
-          </div>
+          </a>
           {/* Navigation Menu */}
           <nav className="flex space-x-6 text-lg">
             {menuItems.map((item, index) => (
-              <a key={index} href="#" className="font-mono uppercase font-bold tracking-widest leading-10">
-                <DrawOutlineButton>{item}</DrawOutlineButton>
+              <a key={index} href={item.href} className="uppercase font-bold font-poppins tracking-widest">
+                <DrawOutlineButton>{item.name}</DrawOutlineButton>
               </a>
             ))}
           </nav>
@@ -103,7 +111,7 @@ const Header = () => {
             <FaUser className="cursor-pointer hover:text-gray-700" title="Account" /> */}
 
 
-            <button onClick={toggleCartVisibility} className="relative z-50 outline-0 text-white px-4 py-1 bg-black rounded-md border-1  flex flex-row" >
+            <button onClick={toggleCartVisibility} className="relative z-50 outline-0 text-white px-4 py-1 bg-black rounded-md border-1 flex flex-row" >
               Your Cart
               <MdShoppingCart
                 color="white"

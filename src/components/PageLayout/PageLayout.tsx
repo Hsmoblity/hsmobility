@@ -2,6 +2,8 @@ import Header from "./Header";
 import Footer from "./Footer";
 import { motion } from "framer-motion";
 import Form from "components/step-form";
+import { useEffect } from "react";
+import { getProducts } from "lib/contentful/contentful";
 
 interface PageLayoutProps {
   children: React.ReactNode;
@@ -11,6 +13,7 @@ const fadeInVariant = {
   visible: { opacity: 1, transition: { duration: 0.4 } }
 };
 const PageLayout: React.FC<PageLayoutProps> = ({ children }) => {
+
   return (
     <div>
       <motion.div

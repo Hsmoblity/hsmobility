@@ -7,7 +7,7 @@ import { InfiniteSlider } from "./marqee";
 
 export function Reviews() {
     return (
-        <div className="mt-10 py-8 px-5">
+        <div id="reviews" className="mt-10 py-8 px-5">
 
             <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row gap-5">
                 {/* Text Section */}

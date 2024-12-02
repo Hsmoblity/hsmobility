@@ -40,27 +40,27 @@ function MyApp({ Component, pageProps }: AppProps) {
     setCartVisibilty(!cartVisibility);
   };
 
-  useEffect(() => {
-    const fetchCartProducts = async () => {
-      const cartProducts = await getProducts('');
-      return console.log(cartProducts);
-      // if (parsedCartItems) {
+  // useEffect(() => {
+  //   const fetchCartProducts = async () => {
+  //     const cartProducts = await getProducts('');
+  //     return console.log(cartProducts);
+  //     if (parsedCartItems) {
 
 
-      //   // if (!cartProducts) {
-      //   //   throw Error("Sorry, something went wrong.");
-      //   // }
+  //       if (!cartProducts) {
+  //         throw Error("Sorry, something went wrong.");
+  //       }
 
-      //   // dispatch({
-      //   //   type: Types.bulkAdd,
-      //   //   payload: cartProducts && appendTotalItemsField(cartProducts)
-      //   // });
-      // }
-    };
+  //       dispatch({
+  //         type: Types.bulkAdd,
+  //         payload: cartProducts && appendTotalItemsField(cartProducts)
+  //       });
+  //     }
+  //   };
 
-    // if (router.asPath !== "/success") 
-    fetchCartProducts();
-  }, []);
+  //   // if (router.asPath !== "/success") 
+  //   fetchCartProducts();
+  // }, []);
 
   return (
     <CartItemsContext.Provider

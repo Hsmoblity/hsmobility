@@ -84,8 +84,8 @@ const Drawer: React.FC = () => {
             ref={scope}
             className="relative bg-transparent z-50 overflow-hidden pb-24"
         >
-            <nav className="fixed top-0 -left-10 h-screen w-11/12 bg-stone-950 transform -translate-x-full will-change-transform">
-                <div className="flex flex-col relative z-40 pt-4 pl-10 font-oswald text-center  text-stone-400 ">
+            <nav className="fixed top-0 -left-10 h-full w-11/12 bg-stone-950 transform -translate-x-full will-change-transform">
+                <div className="flex flex-col relative z-40 pt-4 pl-10 font-poppins text-center  text-stone-400 ">
                     <div className="flex flex-col md:gap-3 gap-2 relative">
                         <div className="flex md:hidden items-center ml-6 mt-6">
                             <img
@@ -104,9 +104,7 @@ const Drawer: React.FC = () => {
                     </div>
                 </div>
                 <ul className="flex flex-col gap-5 pt-10 pl-10 text-white font-bold text-2xl border-l-[0.5px] m-5 ">
-                    <li className="p-2.5 transform-origin-left-5 will-change-transform-opacity-filter">
-                        <a href="mailto:hsmobilityinc@gmail.com" className="text-sky-600">hsmobilityinc@gmail.com</a><br />
-                    </li>
+
 
                     <li className="p-2.5 transform-origin-left-5 will-change-transform-opacity-filter">
                         <Link aria-label="link to how it works section" href="/#how-it-works" onClick={toggleDrawer}>Shop All</Link>
@@ -127,11 +125,13 @@ const Drawer: React.FC = () => {
                         <div className="text-left">
                             <h2 className="text-2xl font-bold mb-4">Find Us at</h2>
                             <p className="text-lg text-white">
-                                Grind<br />
-                                3495 Rebecca St<br /> #207 Oakville, ON<br />L6L 6X9
+
+                                3495 Rebecca St<br /> #207 Oakville, ON<br />L6L 6X9<br />
+                                <a href="mailto:hsmobilityinc@gmail.com" className="text-xl text-sky-400">hsmobilityinc@gmail.com</a><br />
                             </p>
                         </div>
                     </li>
+
 
 
 
