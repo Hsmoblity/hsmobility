@@ -8,7 +8,7 @@ export interface BulkAddAction {
 
 export interface AddToCartAction {
   type: Types.addToCart;
-  payload: ProductSchema;
+  payload: any;
 }
 
 export interface RemoveSingleItemAction {

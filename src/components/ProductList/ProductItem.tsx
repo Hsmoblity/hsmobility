@@ -1,51 +1,187 @@
+import { AnimatedSubscribeButton } from "components/btn";
+import { Lens } from "components/PageLayout/lens";
+import { Carousel, CarouselContent, CarouselItem } from "components/pictureCarousal";
+import CartContext from "contexts/cartItemsContext";
 import Link from "next/link";
-import Image from "next/image";
-import { ProductSchema } from "lib/interfaces";
-// import urlFor from "lib/sanity/urlFor";
-import classNames from "classnames";
+import { useContext, useState } from "react";
+import { FaCartPlus, FaShoppingCart } from "react-icons/fa";
+import Types from "reducers/cart/types";
 
 interface ProductItemProps {
-  product: ProductSchema;
+  product: {
+    title: string;
+    shortDescription: string;
+    featuredImage: string;
+    affiliate: boolean;
+    productPictures?: { fields: { file: { url: string } } }[];
+    price: number;
+    slug: string;
+  };
 }
 
 const ProductItem: React.FC<ProductItemProps> = ({ product }) => {
+  const [index, setIndex] = useState(0);
+  const [hovering, setHovering] = useState(false);
+  const { dispatch } = useContext(CartContext); // Use CartContext to get the dispatch function
+
+  // Handle adding to the cart
+  const handleAddToCart = () => {
+    const cartProduct = {
+      slug: product.slug,
+      title: product.title,
+      price: product.price,
+      quantity: 1,
+      productPictures: product.productPictures,
+      affiliate: product.affiliate,
+    };
+
+    dispatch({
+      type: Types.addToCart,  // Action type for adding the product to the cart
+      payload: cartProduct,
+    });
+  };
+
+  // Generate image URLs with fallback to temp.webp
+  const IMAGE_URLS =
+    product.productPictures?.length
+      ? product.productPictures.map((pic) => pic.fields.file.url)
+      : product.featuredImage
+        ? [product.featuredImage]
+        : ['/temp.webp'];
+
+
   return (
-    <div>
-      <Link href={`/product/${product.slug}`}>
-        <div className="relative w-full h-full">
-          <div className="w-full h-64 md:mb-4 mb-2 overflow-hidden relative">
-            <Image
-              src={product.productPictures[0].fields.file.url}
-              quality={100}
-              layout="fill"
-              className="clickable-img"
-              alt={product.title}
-            />
+    <div className="flex flex-col items-center py-8 mt-16 bg-[url('/nnnoise.svg')] bg-cover bg-repeat">
+      <div className="flex max-w-screen-2xl flex-row w-full justify-center items-start gap-10 z-10">
+        {/* Image Section */}
+        <div className="relative w-full max-w-md py-8">
+          <Carousel disableDrag index={index} onIndexChange={setIndex}>
+            <CarouselContent className="relative">
+              {IMAGE_URLS.map((url, idx) => (
+                <CarouselItem key={idx} className="py-4">
+                  <div className="flex aspect-square items-center justify-center  ">
+                    <Lens hovering={hovering} setHovering={setHovering}>
+                      <img
+                        src={url}
+                        alt={`Product Image ${idx + 1}`}
+                        className=" object-cover object-center"
+                      />
+                    </Lens>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
+          <div className="flex w-full justify-center space-x-3 px-4">
+            {IMAGE_URLS.map((url, idx) => (
+              <button
+                key={idx}
+                type="button"
+                aria-label={`Go to slide ${idx + 1}`}
+                onClick={() => setIndex(idx)}
+                className={`h-20 w-20 border ${idx === index
+                  ? 'border-blue-500'
+                  : 'border-zinc-200 dark:border-zinc-800'
+                  }`}
+              >
+                <img
+                  src={url}
+                  alt={`Thumbnail ${idx + 1}`}
+                  className="w-full h-full object-cover"
+                />
+              </button>
+            ))}
           </div>
         </div>
-      </Link>
-      <Link href={`/product/${product.slug}`}>
-        <div className="relative w-full h-full">
-          <div className="w-full px-1 flex flex-col items-center">
-            <h3 className="text-lg uppercase font-medium text-center mb-3">
-              {product.title}
-            </h3>
-            <div className="flex items-center flex-col">
-              <span
-                className={classNames("text-base mb-1",
+        <div className="flex flex-col">
+          {/* Details Section */}
+          <div className="flex flex-col gap-6 w-full max-w-[600px] border-2 p-4 bg-white drop-shadow-lg m-4 rounded-lg">
+            {/* Product Title */}
 
-                  "mr-3 text-gray-900"
-                )}
-              >
-                ${product.price}
-              </span>
+            <p className="md:text-sm text-md text-gray-600 mx-8">
+              <span className="font-bold">Shop • </span>
+              <span className="font-mono hover:text-blue-300 hover:underline"> {product.title}</span>
+
+            </p>
+            <h1 className="md:text-4xl text-xl font-bold text-gray-800 mx-8 font-poppins">
+              {product.title}
+            </h1>
+            {/* Product Description */}
+            <p className="md:text-lg text-md text-gray-600 mx-8">
+              {product.shortDescription}
+            </p>
+            <div className="border-b-[0.2px]"></div>
+
+            {/* Price and Add to Cart */}
+            <div className="flex justify-between items-center mx-6">
+              {product.affiliate ? (
+                // Affiliate-specific UI
+                <>
+                  <button className="text-md font-bold text-black underline">
+                    Learn More
+                  </button>
+                  <div className="flex items-center space-x-1.5 rounded-lg bg-black px-4 py-1.5 text-white duration-100 hover:bg-slate-800">
+                    <button className="text-sm">Get a Quote</button>
+                  </div>
+                </>
+              ) : (
+                // Non-affiliate product UI
+                <>
+                  <p className="text-lg font-bold text-blue-500">${product.price.toFixed(2)}</p>
+                  <div className="flex items-center space-x-1.5 rounded-lg bg-black px-4 py-1.5 text-white duration-100 hover:bg-slate-800">
+                    <button onClick={handleAddToCart} className="text-sm">Add to cart</button>
+                    <FaShoppingCart className="h-4 w-4" />
+                  </div>
+                </>
+              )}
 
             </div>
           </div>
+          <div className="flex flex-col gap-6 w-full max-w-[600px] border-2 p-4 bg-white drop-shadow-lg m-4 rounded-lg">
+            <div className="mt-10">
+              <h2 className="text-2xl font-semibold text-gray-800 font-poppins">You Might also Like</h2>
+              <div className="flex gap-8 mt-6">
+                <div className="flex flex-col items-center border-[0.2px] pb-2">
+                  <img
+                    loading="lazy"
+                    src="/180-stairlift-moving.png"
+                    alt="30 Pod Mix"
+                    className="object-cover max-w-56 aspect-[1.61]"
+                  />
+                  <p className="text-xl uppercase text-gray-800 font-bold m-3">For curved staircases</p>
+                  <p className="text-lg text-slate-600 m-2">The Acorn 180 stairlift for curved staircases</p>
+                  <button className="relative inline-flex text-nowrap h-12 mt-4 overflow-hidden rounded-lg">
+                    <span className="group inline-flex items-center bg-black text-white px-4 py-2">
+                      <Link href="/product/acorn-stairlifts-acorn-130-straight-stairlift">Shop Now{" "}</Link>
+                      <FaCartPlus className="ml-1 size-4 transition-transform duration-300 group-hover:translate-x-3" />
+                    </span>
+                  </button>
+
+
+                </div>
+                <div className="flex flex-col items-center border-[0.2px] pb-2">
+                  <img
+                    loading="lazy"
+                    src="/acorn-outdoor-stair-lift-uk.jpg"
+                    alt="100 Pod Box"
+                    className="object-cover max-w-56 aspect-[1.61]"
+                  />
+                  <p className="text-xl uppercase text-gray-800 font-bold m-3">For outdoor spaces</p>
+                  <p className="text-lg text-slate-600 m-2">The Acorn 160 stairlift for  outdoor spaces</p>
+                  <button className="relative inline-flex text-nowrap h-12 mt-4 overflow-hidden rounded-lg">
+                    <span className="group inline-flex items-center bg-black text-white px-4 py-2">
+                      <Link href="/product/acorn-stairlifts-acorn-130-straight-stairlift">Shop Now{" "}</Link>
+                      <FaCartPlus className="ml-1 size-4 transition-transform duration-300 group-hover:translate-x-3" />
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </Link>
+      </div>
     </div>
   );
-};
+}
 
 export default ProductItem;

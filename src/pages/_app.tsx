@@ -12,6 +12,8 @@ import Cookies from "js-cookie";
 // import client from "lib/sanity/client";
 import { useRouter } from "next/router";
 import { getProducts } from "lib/contentful/contentful";
+import NextTopLoader from "nextjs-toploader";
+import { Cursor } from "components/custom-cursor";
 
 
 const cartItems = Cookies.get("_cart");
@@ -24,7 +26,6 @@ const slugs =
   }, []);
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const router = useRouter();
   const [cart, dispatch] = useReducer(cartReducer, []);
   const [cartVisibility, setCartVisibilty] = useState(false);
   // const appendTotalItemsField = (products: CartProduct[]) => {
@@ -75,6 +76,22 @@ function MyApp({ Component, pageProps }: AppProps) {
           toggleCartVisibility
         }}
       >
+        <NextTopLoader
+          color="#debe75"
+          initialPosition={0.3}
+          crawlSpeed={500}
+          height={6}
+          crawl={true}
+          showSpinner={true}
+          easing="ease"
+          speed={400}
+          shadow="0 0 10px #2299DD,0 0 5px #2299DD"
+          template='<div class="bar" role="bar"><div class="peg"></div></div> 
+  <div class="spinner" role="spinner"><div class="spinner-icon"></div></div>'
+          zIndex={1600}
+          showAtBottom={false}
+        />
+
         <PageLayout>
           <Component {...pageProps} />
         </PageLayout>

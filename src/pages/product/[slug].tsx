@@ -5,9 +5,9 @@ import { Reviews } from "components/reviews";
 import Form from "components/step-form";
 import { useEffect, useState } from "react";
 import { getProducts } from "lib/contentful/contentful";
-import ProductHero from "components/productHero";
 import ProductList from "components/ProductList/ProductList";
 import { GetServerSideProps } from 'next';
+import ProductItem from "components/ProductList/ProductItem";
 
 interface ContentfulProduct {
     fields: {
@@ -39,7 +39,7 @@ const ProductPage = ({ params, mappedProducts, hero }: Props) => {
     return (
         <>
             <MetaHead description="An eCommerce app that is built by NextJS, Sanity and Stripe." />
-            {hero && <ProductHero product={hero} />}
+            {hero && <ProductItem product={hero} />}
             <div className="justify-center mx-auto">
                 <h2 className="text-center text-4xl uppercase leading-8 text-gray-800 my-6 font-bold font-poppins max-w-4xl mx-auto">
                     Explore a curated selection of top-notch mobility products crafted to elevate your lifestyle.

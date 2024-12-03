@@ -54,13 +54,13 @@ const Cart = () => {
       <div
         onClick={toggleCartVisibility}
         className={classNames(
-          "fixed w-screen h-screen opacity-30 bg-slate-500 z-10",
+          "fixed w-screen h-screen opacity-30 bg-[#ffeddf] z-10",
           { hidden: !cartVisibility }
         )}
       ></div>
       <div
         className={classNames(
-          "fixed sm:w-96 w-full h-screen right-0 z-10 bg-slate-600 top-14 overflow-hidden",
+          "fixed sm:w-96 w-full h-screen right-0 z-10 bg-[#ffeddf] top-14 overflow-hidden",
           { hidden: !cartVisibility },
           { "flex flex-col items-center justify-center": cart.length === 0 }
         )}
@@ -68,7 +68,7 @@ const Cart = () => {
         {cart.length > 0 ? (
           <div className="relative h-full">
             <div className="relative w-full h-2/3 p-5 overflow-y-auto top-0">
-              <h4 className="text-3xl text-white font-medium mb-8">My Cart</h4>
+              <h4 className="text-3xl text-black font-medium mb-8">My Cart</h4>
               {cart && <ItemList products={cart} />}
             </div>
             <div className="w-full sticky h-80 bg-black -ml-2.5 border-t border-white p-6 pl-8 bottom-0">
@@ -103,7 +103,7 @@ const Cart = () => {
             </div>
           </div>
         ) : (
-          <h4 className=" text-white text-center font-medium mb-8 text-lg">
+          <h4 className=" text-black font-poppins text-center font-medium mb-8 text-lg">
             Your cart is empty.
           </h4>
         )}

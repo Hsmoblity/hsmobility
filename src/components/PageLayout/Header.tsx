@@ -61,7 +61,7 @@ const Header = () => {
       <div className={`py-2 transition-transform duration-500  ${isScrolled ? `bg-[#f1ebe0] ` : `bg-[url('/nnnoise.svg')] bg-cover bg-repeat`}`}>
         <Link href="/" className="flex md:hidden items-center ml-6 mt-6">
           <img
-            src="/logo.png"
+            src="/logo2.png"
             alt="Logo"
             className="h-10 object-contain"
           />
@@ -90,9 +90,9 @@ const Header = () => {
 
           <Link href="/" className="flex items-center">
             <img
-              src="/logo.png"
+              src="/logo2.png"
               alt="Logo"
-              className="h-10 object-contain"
+              className="w-48 object-contain"
             />
           </Link>
           {/* Navigation Menu */}
@@ -112,12 +112,11 @@ const Header = () => {
             <FaUser className="cursor-pointer hover:text-gray-700" title="Account" /> */}
 
 
-            <button onClick={toggleCartVisibility} className="relative z-50 outline-0 text-white px-4 py-1 bg-black rounded-md border-1 flex flex-row" >
-              Your Cart
+            <button onClick={toggleCartVisibility} className="relative z-50 outline-0 text-white flex flex-row" >
+
               <MdShoppingCart
-                color="white"
-                className="ml-2"
-                size={30}
+                color="black"
+                size={40}
               />
               {cartLength > 0 && (
                 <span className="absolute w-4 h-4 text-black text-xs border border-solid border-gray-500 rounded-full flex flex-row justify-center items-center p-2 -left-1 -bottom-1 bg-white">

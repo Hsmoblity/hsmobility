@@ -89,7 +89,7 @@ const Drawer: React.FC = () => {
                     <div className="flex flex-col md:gap-3 gap-2 relative">
                         <div className="flex md:hidden items-center ml-6 mt-6">
                             <img
-                                src="/logo.png"
+                                src="/logo2.png"
                                 alt="Logo"
                                 className="h-10 object-contain"
                             />

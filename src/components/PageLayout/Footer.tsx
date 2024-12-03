@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Logo */}
           <div className="flex flex-col items-center lg:col-span-1">
-            <img src="/logo.png" alt="Logo" className="w-44 object-contain mb-4" />
+            <img src="/logo2.png" alt="Logo" className="w-44 object-contain mb-4" />
           </div>
 
           {/* Follow Us */}
@@ -61,7 +61,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom Line */}
-      <p className="text-md text-gray-700 text-center my-4">
+      {/* <p className="text-md text-gray-700 text-center my-4">
         &copy; {d.getFullYear()} Designed and developed by{" "}
         <Link
           href="https://harbourfrontwebdesigns.com/"
@@ -70,7 +70,7 @@ const Footer = () => {
         >
           <b className="underline">Harbourfront Web Designs</b>
         </Link>
-      </p>
+      </p> */}
     </div>
   );
 };
