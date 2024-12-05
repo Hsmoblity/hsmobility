@@ -43,7 +43,7 @@ function FAQ() {
 
             <div className="max-w-screen-xl mx-auto  py-8 px-5">
                 <div className="text-center mb-8">
-                    <h2 className="text-6xl font-bold font-poppins text-gray-800">Frequently Asked Questions</h2>
+                    <h2 className="md:text-5xl text-4xl font-bold font-poppins text-gray-800">Frequently Asked Questions</h2>
                 </div>
 
                 {/* FAQ Layout */}

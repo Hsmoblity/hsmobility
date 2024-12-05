@@ -12,51 +12,58 @@ export default async function handler(
 ) {
   if (req.method === "POST") {
     try {
-      console.log("req.body.items", req.body.items);
+      const items = req.body.items;
 
+      const line_items = items.map((item: any) => {
+        const imgUrl = item.productPictures[0]?.url || ""; // Extract the first image URL
+
+        return {
+          price_data: {
+            currency: "CAD",
+            product_data: {
+              name: item.title,
+              images: imgUrl ? [imgUrl] : [], // Stripe requires an array for images
+            },
+            unit_amount: item.price * 100, // Convert price to cents
+          },
+          adjustable_quantity: {
+            enabled: true,
+            minimum: 1,
+          },
+          quantity: item.quantity || 1,
+        };
+      });
+
+      // Fetch predefined shipping rates from Stripe
+      const shippingRates = await stripe.shippingRates.list({
+        limit: 5, // Adjust the limit to your needs
+      });
+
+      // Map the shipping rate IDs from the fetched data
+      const shippingOptions = shippingRates.data.map(rate => ({
+        shipping_rate: rate.id,
+      }));
+
+      // Create the checkout session
       const session = await stripe.checkout.sessions.create({
         submit_type: "pay",
         payment_method_types: ["card"],
         billing_address_collection: "auto",
         shipping_address_collection: {
-          allowed_countries: ["US", "CA"] // Replace with countries relevant to your use case
+          allowed_countries: ["US", "CA"], // Adjust to your business needs
         },
-        // shipping_options: [
-        //   {
-        //     shipping_rate: "shr_1LwIjtHs6qS0xDzPhMIPdvAd"
-        //   },
-        //   {
-        //     shipping_rate: "shr_1LwIkrHs6qS0xDzP3qphYXpq"
-        //   }
-        // ],
-        line_items: req.body.items.map((item: CartProduct) => {
-          const imgUrl = (item.featuredImage);
-
-          return {
-            price_data: {
-              currency: "CAD",
-              product_data: {
-                name: item.title,
-                images: [imgUrl]
-              },
-              unit_amount: (item.price)
-            },
-            adjustable_quantity: {
-              enabled: true,
-              minimum: 1
-            },
-            quantity: item.quantity ? item.quantity : 1
-          };
-        }),
+        shipping_options: shippingOptions, // Use the fetched shipping options
+        line_items,
         mode: "payment",
         success_url: `${req.headers.origin}/success`,
-        cancel_url: `${req.headers.origin}`
+        cancel_url: `${req.headers.origin}`,
       });
-
       res.status(200).json(session);
     } catch (error) {
+      console.error("Stripe session creation failed:", error);
       res.status(500).json({
-        message: error instanceof Error ? error.message : null
+        message: "Failed to create checkout session",
+        error: error instanceof Error ? error.message : "Unknown error",
       });
     }
   } else {
@@ -64,3 +71,4 @@ export default async function handler(
     res.status(405).end("Method Not Allowed");
   }
 }
+

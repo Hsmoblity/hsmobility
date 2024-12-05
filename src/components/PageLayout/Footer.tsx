@@ -6,71 +6,78 @@ const Footer = () => {
 
   return (
     <div className="w-full bg-inherit">
-      <div className="bg-[url('/nnnoise.svg')] bg-cover bg-repeat px-5 py-10">
-        <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Logo */}
-          <div className="flex flex-col items-center lg:col-span-1">
-            <img src="/logo2.png" alt="Logo" className="w-44 object-contain mb-4" />
-          </div>
+      <div className="bg-[url('/nnnoise.svg')] bg-cover bg-repeat">
+        <div className="max-w-screen-xl py-2 px-4 sm:px-6 md:text-left text-center text-gray-800 sm:flex justify-between mx-auto">
+          <div className="p-5 sm:w-2/12 border-r hidden md:block">
+            <div className="text-xl uppercase md:mt-10 text-black font-black font-poppins ">Menu</div>
+            <ul>
+              <li className="my-2">
+                <a href="/" className="text-lg leading-6 text-gray-500 hover:text-gray-900">
+                  About
+                </a>
+              </li>
+              <li className="my-2">
+                <a href="#" className="text-base leading-6 text-gray-500 hover:text-gray-900">
+                  Shop All
+                </a>
+              </li>
+              <li className="my-2">
+                <a href="#" className="text-base leading-6 text-gray-500 hover:text-gray-900">
+                  Acorn Stairlifts
+                </a>
+              </li>
+              <li className="my-2">
+                <a href="#" className="text-base leading-6 text-gray-500 hover:text-gray-900">
+                  Reviews
+                </a>
+              </li>
 
-          {/* Follow Us */}
-          <div className="text-center">
-            <h2 className="text-2xl font-bold mb-4">Follow Us</h2>
-            <div className="flex justify-center gap-4 text-3xl text-gray-700">
-              <FaInstagram className="cursor-pointer hover:text-black" />
-              <FaFacebook className="cursor-pointer hover:text-black" />
-              <FaTwitter className="cursor-pointer hover:text-black" />
-              <FaYoutube className="cursor-pointer hover:text-black" />
-              {/* <FaSpotify className="cursor-pointer hover:text-black" /> */}
-            </div>
-          </div>
-
-          {/* Find Us */}
-          <div className="text-center">
-            <h2 className="text-2xl font-bold mb-4">Find Us</h2>
-            <p className="text-lg text-gray-700">
-              Grind<br />
-              3495 Rebecca St<br /> #207 Oakville, ON<br />L6L 6X9
-            </p>
-          </div>
-
-          {/* Contact Us */}
-          <div className="text-center">
-            <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
-            <p className="text-lg text-gray-700">
-              All enquiries: <Link href="mailto:hsmobilityinc@gmail.com" className="text-sky-600">hsmobilityinc@gmail.com</Link><br />
-              {/* PR: <Link href="mailto:grind@emergelimited.com" className="text-blue-600">grind@emergelimited.com</Link> */}
-            </p>
-          </div>
-
-          {/* Legal Links
-          <div className="text-center lg:col-span-2">
-            <h2 className="text-2xl font-bold mb-4">Legal</h2>
-            <ul className="text-lg text-gray-700 space-y-2">
-              <li>Privacy Policy</li>
-              <li>Terms & Conditions</li>
-              <li>Pod Machine Warranty</li>
-              <li>Rewards Terms</li>
-              <li>Delivery</li>
+              <li className="my-2">
+                <a href="#" className="text-base leading-6 text-gray-500 hover:text-gray-900">
+                  Faq
+                </a>
+              </li>
             </ul>
-          </div> */}
+          </div>
+          <div className="p-5 sm:w-7/12 border-r text-center">
+            <div className="flex flex-col items-center lg:col-span-1">
+              <img src="/Logo.png" alt="Logo" className="w-64 object-contain mb-4" />
+            </div>
+            <p className="text-gray-500 text-base mb-10">HSMobility is your trusted source for a wide range of health services and mobility products designed to improve your quality of life.
 
-          {/* Footer Note */}
+              <br /><br /><br />Please note: We are not manufacturers of Acron stairlifts but proud affiliate partners.</p>
 
+          </div>
+          <div className="px-5 pt-5 sm:w-3/12">
+            <div className="text-xl uppercase md:mt-9 text-black font-black font-poppins">Contact Us</div>
+            <ul>
+              <li className="my-2">
+                <div className="hover:text-indigo-600"> 3495 Rebecca St<br /> #207 Oakville, ON<br />L6L 6X9</div>
+              </li>
+              <li className="my-2">
+                <a className="hover:text-indigo-600" href="mailto:hsmobilityinc@gmail.com">hsmobilityinc@gmail.com</a>
+              </li>
+              <li className="my-2">
+                <a className="hover:text-indigo-600" href="tel:+19053301774">
+                  +1 (905) 330-1774</a>
+              </li>
+              <li className="mt-4 justify-center mx-auto">
+                <a className="hover:text-indigo-600 " href="https://www.facebook.com/profile.php?id=61565518749182"><FaFacebook className="flex justify-center mx-auto" size={25} /></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className="flex pb-5 m-auto text-gray-800 text-sm flex-col items-center border-t max-w-screen-xl">
+          <div className="flex justify-center gap-6">
+            <img src="/visa.svg" alt="Visa" className="w-10 h-auto" />
+            <img src="/mastercard.svg" alt="MasterCard" className="w-10 h-auto" />
+            <img src="/amex.svg" alt="American Express" className="w-10 h-auto" />
+            <img src="/discover.svg" alt="Discover" className="w-10 h-auto" />
+          </div>
+          <div className="my-5">© Copyright 2025. All Rights Reserved.</div>
         </div>
       </div>
 
-      {/* Bottom Line */}
-      {/* <p className="text-md text-gray-700 text-center my-4">
-        &copy; {d.getFullYear()} Designed and developed by{" "}
-        <Link
-          href="https://harbourfrontwebdesigns.com/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <b className="underline">Harbourfront Web Designs</b>
-        </Link>
-      </p> */}
     </div>
   );
 };

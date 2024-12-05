@@ -13,6 +13,7 @@ const PageLayout: React.FC<PageLayoutProps> = ({ children }) => {
 
   return (
     <div>
+      <a href="https://harbourfrontwebdesigns.com" className="absolute top-[-9999] left-[-9999] -z-50">Website Designed and Developed by</a>
       <motion.div
         initial="hidden"
         animate="visible"

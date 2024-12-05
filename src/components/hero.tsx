@@ -6,9 +6,9 @@ function Hero() {
         <>
             <section className="relative z-10 w-full  bg-[url('/nnnoise.svg')] bg-cover bg-repeat px-3 py-24  flex flex-col">
                 <div className="flex md:flex-row flex-col">
-                    <h1 className="text-left font-poppins md:ml-20 w-full pt-10  tracking-wider text-black  font-semibold md:text-6xl text-5xl my-6 leading-tight -space-y-10">
+                    <h1 className="text-left font-poppins md:ml-20 w-full pt-10 md:tracking-wider text-black  font-semibold md:text-6xl text-5xl md:my-6 leading-tight md:-space-y-10">
                         Express Your<br />
-                        <span className="inline-block border-t-8 border-black w-60 pb-5"></span> Freedom with HS Mobility,
+                        <span className="inline-block border-t-8 border-black md:w-60 w-48 pb-4"></span> Freedom with HS Mobility,
                     </h1>
                     <div className="block relative mt-6 h-96 items-center w-full max-w-[660px] md:justify-end mx-auto overflow-hidden  md:h-80 lg:h-[420px]">
                         <div className="h-24 w-24 border-4 bg-gray-800 absolute top-8 left-12 rounded-full">
@@ -38,7 +38,7 @@ function Hero() {
 
                             />
                         </div>
-                        <div className="text-2xl relative top-16 mt-20 md:px-14 my-10"> Empowering 1000+ Satisfied Customers to Stay Independent with Exceptional mobility products</div>
+                        <div className="text-2xl relative top-16 mt-20 md:px-14 font-poppins font-semibold my-10"> Empowering 1000+ Satisfied Customers to Stay Independent with Exceptional mobility products</div>
                         <button className="relative top-14 left-12 inline-flex text-nowrap h-12 overflow-hidden rounded-full p-[2px] focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50">
                             <span className="inline-flex text-nowrap h-full w-full cursor-pointer items-center justify-center rounded-full bg-black border-gray-400 border-b-4 border-r-4 px-8 py-1 text-md uppercase font-medium  text-white backdrop-blur-3xl">
                                 <Link href="#reviews" >Learn more</Link>
@@ -70,11 +70,11 @@ function Hero() {
                                     <img
                                         loading="lazy"
                                         src="/130-stairlift-hinge.jpg"
-                                        alt="30 Pod Mix"
-                                        className="object-cover max-w-40 aspect-[1.61] rounded-lg"
+                                        alt="130-stairlift"
+                                        className="object-fill max-w-40 aspect-[1.61] rounded-lg"
                                     />
                                     <p className="text-base uppercase text-gray-800 font-bold m-3">Acorn Straight Stairlifts</p>
-                                    <p className="text-md text-slate-600 md:mx-3 mx-4 line-clamp-3">The ultimate staircase solution, giving you the full use of the home you love.</p>
+                                    <p className="text-md text-slate-600 md:mx-1 mx-4 line-clamp-3">The ultimate staircase solution, giving you the full use of the home you love.</p>
                                     <button className="relative inline-flex text-nowrap h-12 mt-4 overflow-hidden rounded-full p-[2px] focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50">
                                         <span className="inline-flex text-nowrap h-full w-full cursor-pointer items-center justify-center rounded-full bg-black border-gray-400 border-b-4 border-r-4 px-8 py-1 text-md uppercase font-medium  text-white backdrop-blur-3xl">
                                             <Link className="text-sm" href="/product/acorn-stairlifts-acorn-180-curved-stairlift" >Check Product</Link>
@@ -85,7 +85,7 @@ function Hero() {
                                     <img
                                         loading="lazy"
                                         src="/180-stairlift-moving.png"
-                                        alt="100 Pod Box"
+                                        alt="180-stairlift-moving"
                                         className="object-cover max-w-40 aspect-[1.61] rounded-lg"
                                     />
                                     <p className="text-base uppercase text-gray-800 font-bold m-3">Acorn Curved Stairlifts</p>
@@ -100,7 +100,7 @@ function Hero() {
                                     <img
                                         loading="lazy"
                                         src="/acorn-outdoor-stair-lift-uk.jpg"
-                                        alt="100 Pod Box"
+                                        alt="acorn-outdoor-stair-lift"
                                         className="object-cover max-w-40 aspect-[1.61] rounded-lg"
                                     />
                                     <p className="text-base uppercase text-gray-800 font-bold m-3">Acorn Outdoor Stairlifts</p>

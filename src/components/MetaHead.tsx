@@ -8,7 +8,7 @@ interface MetaHeadProps {
   type?: string;
 }
 
-const siteUrl = "https://react-woocommerce.vercel.app";
+const siteUrl = "https://hsmobility.app";
 
 const MetaHead: React.FC<MetaHeadProps> = ({
   title,
@@ -20,7 +20,7 @@ const MetaHead: React.FC<MetaHeadProps> = ({
 
   return (
     <Head>
-      <title>{`NextJS Sanity eCommerce${title ? ` | ${title}` : ``}`}</title>
+      <title>{`HS Mobility${title ? ` | ${title}` : ``}`}</title>
       <meta name="description" content={description} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />

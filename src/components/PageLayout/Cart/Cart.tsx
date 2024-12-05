@@ -22,24 +22,45 @@ const Cart = () => {
     .toFixed(2);
 
   const handleCheckout = async () => {
-    setRedirecting(true);
+    try {
+      setRedirecting(true);
 
-    const stripe = await getStripe();
+      const stripe = await getStripe();
 
-    const response = await fetch("/api/stripe", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ items: cart })
-    });
+      const response = await fetch("/api/stripe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ items: cart }),
+      });
+      console.log("Response:", response);
 
-    if (response?.status == 500) return;
+      if (!response.ok) {
+        const error = await response.json();
+        console.error("API Error:", error);
+        setRedirecting(false);
+        return;
+      }
 
-    const data = await response.json();
+      const data = await response.json();
 
-    stripe?.redirectToCheckout({ sessionId: data.id });
+      if (!data.id) {
+        console.error("Invalid session ID returned:", data);
+        setRedirecting(false);
+        return;
+      }
+
+      const result = await stripe?.redirectToCheckout({ sessionId: data.id });
+      if (result?.error) {
+        console.error("Stripe redirection error:", result.error.message);
+      }
+    } catch (error) {
+      console.error("Checkout error:", error);
+      setRedirecting(false);
+    }
   };
+
 
   useEffect(() => {
     if (cartVisibility) {
@@ -54,13 +75,13 @@ const Cart = () => {
       <div
         onClick={toggleCartVisibility}
         className={classNames(
-          "fixed w-screen h-screen opacity-30 bg-[#ffeddf] z-10",
+          "fixed w-screen h-screen opacity-30 bg-[#f5ebdf] z-10",
           { hidden: !cartVisibility }
         )}
       ></div>
       <div
         className={classNames(
-          "fixed sm:w-96 w-full h-screen right-0 z-10 bg-[#ffeddf] top-14 overflow-hidden",
+          "fixed sm:w-96 w-full h-screen right-0 z-10 bg-[#f5ebdf] top-14 overflow-hidden",
           { hidden: !cartVisibility },
           { "flex flex-col items-center justify-center": cart.length === 0 }
         )}
@@ -82,10 +103,6 @@ const Cart = () => {
                   Calculated at checkout
                 </span>
               </div>
-              <div className="flex flex-wrap flex-row justify-between mb-4">
-                <span className="text-white text-sm">Shipping</span>
-                <span className="text-white text-sm">FREE</span>
-              </div>
               <div className="w-full h-px bg-gray-800 mb-4"></div>
               <div className="flex flex-wrap flex-row justify-between mb-4">
                 <span className="text-white text-sm font-semibold">Total</span>
@@ -95,7 +112,7 @@ const Cart = () => {
               </div>
               <button
                 disabled={isRedirecting}
-                className=" outline-none bg-[#ffeddf] border-0 py-4 w-full text-sm uppercase hover:bg-gray-300 transition duration-500 ease-in-out"
+                className=" outline-none bg-[#f5ebdf] border-0 py-4 w-full text-sm uppercase hover:bg-gray-300 transition duration-500 ease-in-out"
                 onClick={handleCheckout}
               >
                 {isRedirecting ? `Please wait...` : `Proceed to Checkout`}

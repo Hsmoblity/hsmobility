@@ -19,19 +19,19 @@ function Banner() {
 
                     {/* Text Section */}
                     <div className="flex flex-col w-full md:w-1/2 text-center md:text-left mb-8 md:mb-0">
-                        <div className=" mx-3 md:text-4xl text-2xl font-medium font-poppins leading-none ">
-                            New Products are here.
+                        <div className=" md:text-4xl text-2xl font-medium font-poppins leading-none ">
+                            New Products are here!
                         </div>
-                        <div className="flex flex-col pt-3 mx-3 w-full">
+                        <div className="flex flex-col pt-3 w-full">
                             <div className="flex gap-1">
-                                <div className=" text-base font-bold font-poppins">Check out our latest mobility Products and Accessories. </div>
+                                <div className=" text-base font-light m-4 font-poppins">Explore our latest arrivals designed to enhance your mobility and support your well-being. From advanced mobility aids to home health solutions, we have everything you need to improve your quality of life. Don’t miss out on these exciting new additions to our collection!</div>
 
                             </div>
                         </div>
                     </div>
 
                     {/* Call to Action Section */}
-                    <button className="relative inline-flex text-nowrap h-12  overflow-hidden rounded-full p-[2px] focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50">
+                    <button className="relative mb-2 inline-flex text-nowrap h-12  overflow-hidden rounded-full p-[2px] focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 focus:ring-offset-gray-50">
                         <span className="inline-flex text-nowrap h-full w-full cursor-pointer items-center justify-center rounded-full bg-black border-gray-400 border-b-4 border-r-4 px-8 py-1 text-md uppercase font-medium  text-white backdrop-blur-3xl">
                             <Link href="#shop">Check out</Link>
                         </span>

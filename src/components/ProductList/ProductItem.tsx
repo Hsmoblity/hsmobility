@@ -3,9 +3,12 @@ import { Lens } from "components/PageLayout/lens";
 import { Carousel, CarouselContent, CarouselItem } from "components/pictureCarousal";
 import CartContext from "contexts/cartItemsContext";
 import Link from "next/link";
+import CartVisibilityContext from "contexts/cartVisibilityContext";
 import { useContext, useState } from "react";
 import { FaCartPlus, FaShoppingCart } from "react-icons/fa";
 import Types from "reducers/cart/types";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { Document } from "@contentful/rich-text-types";
 
 interface ProductItemProps {
   product: {
@@ -13,6 +16,7 @@ interface ProductItemProps {
     shortDescription: string;
     featuredImage: string;
     affiliate: boolean;
+    productSpeciications: Document;
     productPictures?: { fields: { file: { url: string } } }[];
     price: number;
     slug: string;
@@ -22,8 +26,10 @@ interface ProductItemProps {
 const ProductItem: React.FC<ProductItemProps> = ({ product }) => {
   const [index, setIndex] = useState(0);
   const [hovering, setHovering] = useState(false);
+  const { toggleCartVisibility } = useContext(CartVisibilityContext);
   const { dispatch } = useContext(CartContext); // Use CartContext to get the dispatch function
-
+  const renderSpecifications = product.productSpeciications ? documentToReactComponents(product.productSpeciications) : null;
+  console.log(renderSpecifications);
   // Handle adding to the cart
   const handleAddToCart = () => {
     const cartProduct = {
@@ -39,6 +45,7 @@ const ProductItem: React.FC<ProductItemProps> = ({ product }) => {
       type: Types.addToCart,  // Action type for adding the product to the cart
       payload: cartProduct,
     });
+    toggleCartVisibility();
   };
 
   // Generate image URLs with fallback to temp.webp
@@ -52,7 +59,7 @@ const ProductItem: React.FC<ProductItemProps> = ({ product }) => {
 
   return (
     <div className="flex flex-col items-center py-8 mt-16 bg-[url('/nnnoise.svg')] bg-cover bg-repeat">
-      <div className="flex max-w-screen-2xl flex-row w-full justify-center items-start gap-10 z-10">
+      <div className="flex flex-col md:max-w-screen-2xl md:flex-row w-full justify-center items-start gap-10 z-10">
         {/* Image Section */}
         <div className="relative w-full max-w-md py-8">
           <Carousel disableDrag index={index} onIndexChange={setIndex}>
@@ -95,7 +102,7 @@ const ProductItem: React.FC<ProductItemProps> = ({ product }) => {
         </div>
         <div className="flex flex-col">
           {/* Details Section */}
-          <div className="flex flex-col gap-6 w-full max-w-[600px] border-2 p-4 bg-white drop-shadow-lg m-4 rounded-lg">
+          <div className="flex flex-col gap-4 md:max-w-[600px] border-2 p-4 bg-white drop-shadow-lg m-4 rounded-lg">
             {/* Product Title */}
 
             <p className="md:text-sm text-md text-gray-600 mx-8">
@@ -110,6 +117,10 @@ const ProductItem: React.FC<ProductItemProps> = ({ product }) => {
             <p className="md:text-lg text-md text-gray-600 mx-8">
               {product.shortDescription}
             </p>
+            <div className="md:text-lg text-md text-gray-600 mx-8">
+              {renderSpecifications}
+            </div>
+
             <div className="border-b-[0.2px]"></div>
 
             {/* Price and Add to Cart */}
@@ -137,11 +148,11 @@ const ProductItem: React.FC<ProductItemProps> = ({ product }) => {
 
             </div>
           </div>
-          <div className="flex flex-col gap-6 w-full max-w-[600px] border-2 p-4 bg-white drop-shadow-lg m-4 rounded-lg">
-            <div className="mt-10">
-              <h2 className="text-2xl font-semibold text-gray-800 font-poppins">You Might also Like</h2>
-              <div className="flex gap-8 mt-6">
-                <div className="flex flex-col items-center border-[0.2px] pb-2">
+          <div className="flex flex-col gap-4 md:max-w-[600px] border-2 p-4 bg-white drop-shadow-lg m-4 rounded-lg">
+            <div className="md:mt-10">
+              <h2 className="text-2xl font-semibold text-gray-800 font-poppins ml-4">Our Bestsellers</h2>
+              <div className="flex flex-col gap-8 mt-6">
+                <div className="flex flex-col items-center  pb-2">
                   <img
                     loading="lazy"
                     src="/180-stairlift-moving.png"
@@ -149,7 +160,7 @@ const ProductItem: React.FC<ProductItemProps> = ({ product }) => {
                     className="object-cover max-w-56 aspect-[1.61]"
                   />
                   <p className="text-xl uppercase text-gray-800 font-bold m-3">For curved staircases</p>
-                  <p className="text-lg text-slate-600 m-2">The Acorn 180 stairlift for curved staircases</p>
+                  <p className="text-lg text-slate-600 md:m-2 mx-8 text-center">The Acorn 180 stairlift for curved staircases</p>
                   <button className="relative inline-flex text-nowrap h-12 mt-4 overflow-hidden rounded-lg">
                     <span className="group inline-flex items-center bg-black text-white px-4 py-2">
                       <Link href="/product/acorn-stairlifts-acorn-130-straight-stairlift">Shop Now{" "}</Link>
@@ -159,7 +170,7 @@ const ProductItem: React.FC<ProductItemProps> = ({ product }) => {
 
 
                 </div>
-                <div className="flex flex-col items-center border-[0.2px] pb-2">
+                <div className="flex flex-col items-center pb-2">
                   <img
                     loading="lazy"
                     src="/acorn-outdoor-stair-lift-uk.jpg"
@@ -167,7 +178,7 @@ const ProductItem: React.FC<ProductItemProps> = ({ product }) => {
                     className="object-cover max-w-56 aspect-[1.61]"
                   />
                   <p className="text-xl uppercase text-gray-800 font-bold m-3">For outdoor spaces</p>
-                  <p className="text-lg text-slate-600 m-2">The Acorn 160 stairlift for  outdoor spaces</p>
+                  <p className="text-lg text-slate-600 md:m-2 mx-8 text-center">The Acorn 160 stairlift for  outdoor spaces</p>
                   <button className="relative inline-flex text-nowrap h-12 mt-4 overflow-hidden rounded-lg">
                     <span className="group inline-flex items-center bg-black text-white px-4 py-2">
                       <Link href="/product/acorn-stairlifts-acorn-130-straight-stairlift">Shop Now{" "}</Link>

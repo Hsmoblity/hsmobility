@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
 import { useAnimate, stagger } from "framer-motion";
 import { RiMenu4Line } from "react-icons/ri";
-import { BiRightArrowAlt } from "react-icons/bi";
 import Link from "next/link";
-import Image from "next/image";
 
 
 interface PathProps {
@@ -20,7 +18,7 @@ const Path: React.FC<PathProps> = (props) => (
     <path
         fill="transparent"
         strokeWidth="3"
-        stroke="var(--background)"
+        stroke="black"
         strokeLinecap="round"
         {...props}
     />
@@ -84,14 +82,14 @@ const Drawer: React.FC = () => {
             ref={scope}
             className="relative bg-transparent z-50 overflow-hidden pb-24"
         >
-            <nav className="fixed top-0 -left-10 h-full w-11/12 bg-stone-950 transform -translate-x-full will-change-transform">
+            <nav className="fixed top-0 -left-10 h-full w-11/12 bg-[#f1ebe0] transform -translate-x-full will-change-transform">
                 <div className="flex flex-col relative z-40 pt-4 pl-10 font-poppins text-center  text-stone-400 ">
                     <div className="flex flex-col md:gap-3 gap-2 relative">
-                        <div className="flex md:hidden items-center ml-6 mt-6">
+                        <div className="flex md:hidden items-center ml-6 mt-4">
                             <img
-                                src="/logo2.png"
+                                src="/Logo.png"
                                 alt="Logo"
-                                className="h-10 object-contain"
+                                className="md:h-10 h-8 object-cover"
                             />
                         </div>
                         {/* <Image
@@ -103,7 +101,7 @@ const Drawer: React.FC = () => {
                         /> */}
                     </div>
                 </div>
-                <ul className="flex flex-col gap-5 pt-10 pl-10 text-white font-bold text-2xl border-l-[0.5px] m-5 ">
+                <ul className="flex flex-col gap-5 pt-8 pl-8 text-black font-bold text-xl border-l-[0.5px] m-5 ">
 
 
                     <li className="p-2.5 transform-origin-left-5 will-change-transform-opacity-filter">
@@ -113,9 +111,6 @@ const Drawer: React.FC = () => {
                         <Link aria-label="check designs" href="/#our-work" onClick={toggleDrawer}>Acorn Stairlift</Link>
                     </li>
                     <li className="p-2.5 transform-origin-left-5 will-change-transform-opacity-filter">
-                        <Link aria-label="check our reviews" href="/#reviews" onClick={toggleDrawer}>Contact us</Link>
-                    </li>
-                    <li className="p-2.5 transform-origin-left-5 will-change-transform-opacity-filter">
                         <Link aria-label="Check out our blogs" href="/blogs" onClick={toggleDrawer}>Reviews</Link>
                     </li>
                     <li className="p-2.5 transform-origin-left-5 will-change-transform-opacity-filter">
@@ -123,27 +118,24 @@ const Drawer: React.FC = () => {
                     </li>
                     <li className="p-2.5 transform-origin-left-5 will-change-transform-opacity-filter">
                         <div className="text-left">
-                            <h2 className="text-2xl font-bold mb-4">Find Us at</h2>
-                            <p className="text-lg text-white">
-
+                            <h2 className="text-xl font-bold mb-4">Contact Us:</h2>
+                            <p className="text-lg ">
                                 3495 Rebecca St<br /> #207 Oakville, ON<br />L6L 6X9<br />
+                                <br />
+                                <Link href="tel:+19053301774" className="text-xl text-sky-400">
+                                    +1 (905) 330-1774
+                                </Link><br />
                                 <Link href="mailto:hsmobilityinc@gmail.com" className="text-xl text-sky-400">hsmobilityinc@gmail.com</Link><br />
                             </p>
                         </div>
                     </li>
-
-
-
-
-
                 </ul>
-
             </nav>
             <button
                 onClick={() => setIsOpen(!isOpen)}
                 className=" w-12 h-12 rounded-full bg-transparent p-2.5"
             >
-                <RiMenu4Line size={50} />
+                <RiMenu4Line size={32} />
             </button>
         </div>
     );

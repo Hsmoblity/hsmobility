@@ -1,10 +1,35 @@
+import CartContext from "contexts/cartItemsContext";
+import CartVisibilityContext from "contexts/cartVisibilityContext";
 import { ProductSchema } from "lib/interfaces";
 import Link from "next/link";
+import { useContext } from "react";
 import { FaShoppingCart } from "react-icons/fa";
+import Types from "reducers/cart/types";
 
 
 
 const Card = ({ title, shortDescription, affiliate, slug, price, featuredImage, productPictures }: ProductSchema) => {
+
+  const { toggleCartVisibility } = useContext(CartVisibilityContext);
+  const { dispatch } = useContext(CartContext); // Use CartContext to get the dispatch function
+
+  // Handle adding to the cart
+  const handleAddToCart = () => {
+    const cartProduct = {
+      slug: slug,
+      title: title,
+      price: price,
+      quantity: 1,
+      productPictures: productPictures,
+      affiliate: affiliate,
+    };
+
+    dispatch({
+      type: Types.addToCart,  // Action type for adding the product to the cart
+      payload: cartProduct,
+    });
+    toggleCartVisibility();
+  };
   // Determine the image to use
   const imageSrc = (productPictures[0].fields.file.url || "/temp.webp");
 
@@ -27,7 +52,7 @@ const Card = ({ title, shortDescription, affiliate, slug, price, featuredImage, 
             {affiliate ? (
               // Affiliate-specific UI
               <>
-                <button className="text-md font-bold text-black underline">
+                <button className="text-sm leading-8 font-bold text-black underline">
                   Learn More
                 </button>
                 <div className="flex items-center space-x-1.5 rounded-lg bg-black px-4 py-1.5 text-white duration-100 hover:bg-slate-800">
@@ -39,7 +64,11 @@ const Card = ({ title, shortDescription, affiliate, slug, price, featuredImage, 
               <>
                 <p className="text-lg font-bold text-blue-500">${price.toFixed(2)}</p>
                 <div className="flex items-center space-x-1.5 rounded-lg bg-black px-4 py-1.5 text-white duration-100 hover:bg-slate-800">
-                  <button className="text-sm">Add to cart</button>
+                  <button onClick={(e) => {
+                    e.stopPropagation();  // Prevent link click from being triggered
+                    e.preventDefault();  // Prevent the default action (link navigation)
+                    handleAddToCart();  // Call your add-to-cart function
+                  }} className="text-sm">Add to cart</button>
                   <FaShoppingCart className="h-4 w-4" />
                 </div>
               </>

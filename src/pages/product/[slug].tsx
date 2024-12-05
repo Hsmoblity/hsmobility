@@ -8,6 +8,7 @@ import { getProducts } from "lib/contentful/contentful";
 import ProductList from "components/ProductList/ProductList";
 import { GetServerSideProps } from 'next';
 import ProductItem from "components/ProductList/ProductItem";
+import { Document } from "@contentful/rich-text-types";
 
 interface ContentfulProduct {
     fields: {
@@ -21,6 +22,7 @@ interface ContentfulProduct {
                 };
             };
         };
+        productSpecifications: Document;
         productPictures?: any[];
         price: number;
         affiliate: boolean;
@@ -35,13 +37,21 @@ type Props = {
 
 const ProductPage = ({ params, mappedProducts, hero }: Props) => {
     const { slug } = params; // Now this will definitely work
+    const pageTitle = hero ? hero.title : "Product Not Found";
+    const pageDescription = hero ? hero.shortDescription : "Explore our mobility products.";
+    const pageImage = hero && hero.productPictures[0].fields?.file?.url ? hero.productPictures[0].fields?.file?.url : "/temp.webp"; // Fallback to a default image
+
 
     return (
         <>
-            <MetaHead description="An eCommerce app that is built by NextJS, Sanity and Stripe." />
+            <MetaHead
+                title={pageTitle}
+                description={pageDescription}
+                featuredImage={pageImage}
+            />
             {hero && <ProductItem product={hero} />}
             <div className="justify-center mx-auto">
-                <h2 className="text-center text-4xl uppercase leading-8 text-gray-800 my-6 font-bold font-poppins max-w-4xl mx-auto">
+                <h2 className="text-center md:text-4xl text-2xl uppercase leading-8 text-gray-800 my-6 font-bold font-poppins max-w-4xl mx-auto">
                     Explore a curated selection of top-notch mobility products crafted to elevate your lifestyle.
                 </h2>
                 <ProductList products={mappedProducts} />
@@ -74,6 +84,7 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
             shortDescription: item.fields.shortDescription,
             featuredImage: item.fields.featuredImage?.fields?.file?.url || "",
             productPictures: item.fields.productPictures || [],
+            productSpeciications: item.fields.productSpecifications || null,
             price: item.fields.price || 0,
             affiliate: item.fields.affiliate || false,
         }));

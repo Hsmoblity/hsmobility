@@ -61,9 +61,9 @@ const Header = () => {
       <div className={`py-2 transition-transform duration-500  ${isScrolled ? `bg-[#f1ebe0] ` : `bg-[url('/nnnoise.svg')] bg-cover bg-repeat`}`}>
         <Link href="/" className="flex md:hidden items-center ml-6 mt-6">
           <img
-            src="/logo2.png"
+            src="/Logo.png"
             alt="Logo"
-            className="h-10 object-contain"
+            className="md:h-10 h-8 object-contain"
           />
         </Link>
         <div className="md:hidden absolute top-5 right-5 flex flex-row ">
@@ -72,7 +72,7 @@ const Header = () => {
             <MdShoppingCart
               color="black"
               className="ml-2"
-              size={50}
+              size={32}
             />
             {cartLength > 0 && (
               <span className="absolute w-4 h-4 text-black text-xs border border-solid border-gray-500 rounded-full flex flex-row justify-center items-center p-2 -left-1 -bottom-1 bg-white">
@@ -83,14 +83,14 @@ const Header = () => {
           <Drawer />
         </div>
       </div>
-      <header className={`md:flex hidden flex-row justify-between z-50 md:px-4 md:pb-2 p-1 font-medium  w-full capitalize transition-transform duration-500  ${isScrolled ? `bg-[#f1ebe0] ` : ` bg-[url('/nnnoise.svg')] bg-cover bg-repeat`}`}>
+      <header className={`md:flex hidden flex-row justify-between z-50 md:px-4 md:pb-2 px-1 font-medium  w-full capitalize transition-transform duration-500  ${isScrolled ? `bg-[#f1ebe0] ` : ` bg-[url('/nnnoise.svg')] bg-cover bg-repeat`}`}>
 
         <div className="w-full mx-auto flex justify-between  max-w-7xl px-6">
           {/* Logo */}
 
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-start">
             <img
-              src="/logo2.png"
+              src="/Logo.png"
               alt="Logo"
               className="w-48 object-contain"
             />
