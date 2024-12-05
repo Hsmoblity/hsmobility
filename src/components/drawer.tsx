@@ -105,16 +105,16 @@ const Drawer: React.FC = () => {
 
 
                     <li className="p-2.5 transform-origin-left-5 will-change-transform-opacity-filter">
-                        <Link aria-label="link to how it works section" href="/#how-it-works" onClick={toggleDrawer}>Shop All</Link>
+                        <Link aria-label="link to how it works section" href="#shop" onClick={toggleDrawer}>Shop All</Link>
                     </li>
                     <li className="p-2.5 transform-origin-left-5 will-change-transform-opacity-filter">
-                        <Link aria-label="check designs" href="/#our-work" onClick={toggleDrawer}>Acorn Stairlift</Link>
+                        <Link aria-label="check designs" href="/product/acorn-stairlifts-acorn-180-curved-stairlift" onClick={toggleDrawer}>Acorn Stairlift</Link>
                     </li>
                     <li className="p-2.5 transform-origin-left-5 will-change-transform-opacity-filter">
-                        <Link aria-label="Check out our blogs" href="/blogs" onClick={toggleDrawer}>Reviews</Link>
+                        <Link aria-label="Check out our blogs" href="#reviews" onClick={toggleDrawer}>Reviews</Link>
                     </li>
                     <li className="p-2.5 transform-origin-left-5 will-change-transform-opacity-filter">
-                        <Link aria-label="Frequently asked Questions" href="/#faq" onClick={toggleDrawer}>FAQs</Link>
+                        <Link aria-label="Frequently asked Questions" href="#faq" onClick={toggleDrawer}>FAQs</Link>
                     </li>
                     <li className="p-2.5 transform-origin-left-5 will-change-transform-opacity-filter">
                         <div className="text-left">
@@ -125,7 +125,7 @@ const Drawer: React.FC = () => {
                                 <Link href="tel:+19053301774" className="text-xl text-sky-400">
                                     +1 (905) 330-1774
                                 </Link><br />
-                                <Link href="mailto:hsmobilityinc@gmail.com" className="text-xl text-sky-400">hsmobilityinc@gmail.com</Link><br />
+                                <Link href="mailto:Info@hsmobility.ca" className="text-xl text-sky-400">Info@hsmobility.ca</Link><br />
                             </p>
                         </div>
                     </li>

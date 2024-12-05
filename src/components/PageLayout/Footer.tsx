@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FaFacebook, FaTwitter, FaInstagram, FaSpotify, FaYoutube } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
 
 const Footer = () => {
   const d = new Date();
@@ -12,30 +12,30 @@ const Footer = () => {
             <div className="text-xl uppercase md:mt-10 text-black font-black font-poppins ">Menu</div>
             <ul>
               <li className="my-2">
-                <a href="/" className="text-lg leading-6 text-gray-500 hover:text-gray-900">
-                  About
-                </a>
+                <Link href="/" className="text-lg leading-6 text-gray-500 hover:text-gray-900">
+                  Home
+                </Link>
               </li>
               <li className="my-2">
-                <a href="#" className="text-base leading-6 text-gray-500 hover:text-gray-900">
+                <Link href="#shop" className="text-base leading-6 text-gray-500 hover:text-gray-900">
                   Shop All
-                </a>
+                </Link>
               </li>
               <li className="my-2">
-                <a href="#" className="text-base leading-6 text-gray-500 hover:text-gray-900">
+                <Link href="/product/acorn-stairlifts-acorn-180-curved-stairlift" className="text-base leading-6 text-gray-500 hover:text-gray-900">
                   Acorn Stairlifts
-                </a>
+                </Link>
               </li>
               <li className="my-2">
-                <a href="#" className="text-base leading-6 text-gray-500 hover:text-gray-900">
+                <Link href="#reviews" className="text-base leading-6 text-gray-500 hover:text-gray-900">
                   Reviews
-                </a>
+                </Link>
               </li>
 
               <li className="my-2">
-                <a href="#" className="text-base leading-6 text-gray-500 hover:text-gray-900">
+                <Link href="#faq" className="text-base leading-6 text-gray-500 hover:text-gray-900">
                   Faq
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -55,14 +55,14 @@ const Footer = () => {
                 <div className="hover:text-indigo-600"> 3495 Rebecca St<br /> #207 Oakville, ON<br />L6L 6X9</div>
               </li>
               <li className="my-2">
-                <a className="hover:text-indigo-600" href="mailto:hsmobilityinc@gmail.com">hsmobilityinc@gmail.com</a>
+                <Link className="hover:text-indigo-600" href="mailto:Info@hsmobility.ca">Info@hsmobility.ca</Link>
               </li>
               <li className="my-2">
-                <a className="hover:text-indigo-600" href="tel:+19053301774">
-                  +1 (905) 330-1774</a>
+                <Link className="hover:text-indigo-600" href="tel:+19053301774">
+                  +1 (905) 330-1774</Link>
               </li>
               <li className="mt-4 justify-center mx-auto">
-                <a className="hover:text-indigo-600 " href="https://www.facebook.com/profile.php?id=61565518749182"><FaFacebook className="flex justify-center mx-auto" size={25} /></a>
+                <Link className="hover:text-indigo-600 " href="https://www.facebook.com/profile.php?id=61565518749182"><FaFacebook className="flex justify-center mx-auto" size={25} /></Link>
               </li>
             </ul>
           </div>

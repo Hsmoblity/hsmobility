@@ -2,6 +2,7 @@ import { useEffect, useContext } from "react";
 import CartItemsContext from "contexts/cartItemsContext";
 import Types from "reducers/cart/types";
 import MetaHead from "components/MetaHead";
+import Link from "next/link";
 
 const Success = () => {
   const { dispatch } = useContext(CartItemsContext);
@@ -37,9 +38,9 @@ const Success = () => {
             <p > Your recipt will shortly arrive to your email!</p>
 
             <div className="py-10 text-center">
-              <a href="/" className="px-12 bg-black rounded-md hover:bg-indigo-500 text-white font-semibold py-3">
+              <Link href="/" className="px-12 bg-black rounded-md hover:bg-indigo-500 text-white font-semibold py-3">
                 GO BACK
-              </a>
+              </Link>
             </div>
           </div>
         </div>

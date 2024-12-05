@@ -1,6 +1,7 @@
 import Header from "./Header";
 import Footer from "./Footer";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 interface PageLayoutProps {
   children: React.ReactNode;
@@ -13,7 +14,7 @@ const PageLayout: React.FC<PageLayoutProps> = ({ children }) => {
 
   return (
     <div>
-      <a href="https://harbourfrontwebdesigns.com" className="absolute top-[-9999] left-[-9999] -z-50">Website Designed and Developed by</a>
+      <Link href="https://harbourfrontwebdesigns.com" className="absolute top-[-9999] left-[-9999] -z-50">Website Designed and Developed by</Link>
       <motion.div
         initial="hidden"
         animate="visible"
