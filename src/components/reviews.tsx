@@ -37,51 +37,51 @@ export function Reviews() {
 
                         {/* Review 1 */}
 
-                        <div className="flex relative gap-4 bg-slate-100 p-4 rounded-lg border-2 border-slate-400 shadow-xl">
+                        <div className="flex relative gap-4 bg-slate-100 md:p-4 p-1 rounded-lg border-2 border-slate-400 shadow-xl">
                             <div className="relative -top-20 -left-10">
                                 <FaQuoteLeft
                                     color="black"
 
-                                    size={100}
+                                    size={80}
                                 />
                             </div>
 
                             <div className="flex flex-col">
-                                <div className="relative -left-10 text-black font-bold text-xl">
+                                <div className="relative -left-10 text-black font-bold md:text-xl text-base">
                                     &quot;When he went downstairs for the first time in 15 months - he cried - it was a touching moment for both of us.&quot;
                                 </div>
 
                             </div>
                         </div>
                         {/* Review 2 */}
-                        <div className="flex relative gap-4 bg-slate-100 p-4 rounded-lg border-b-2 border-l-[0.1px] border-r-[0.1px] border-slate-400 shadow-xl">
+                        <div className="flex relative gap-4 bg-slate-100 md:p-4 p-1 rounded-lg border-b-2 border-l-[0.1px] border-r-[0.1px] border-slate-400 shadow-xl">
                             <div className="relative -top-20 -left-10">
                                 <FaQuoteLeft
                                     color="black"
 
-                                    size={100}
+                                    size={80}
                                 />
                             </div>
 
                             <div className="flex flex-col">
-                                <div className="relative -left-10 text-black font-bold text-xl">
+                                <div className="relative -left-10 text-black font-bold md:text-xl text-base">
                                     &quot;Just wanted you to know how happy and satisfied we are with our Acorn chairlift. It fits into our decor beautifully and does all it is supposed to do. The installer was excellent. Efficient and pleasant and spent the time instructing us on how to use the chair.&quot;
                                 </div>
 
                             </div>
                         </div>
 
-                        <div className="flex relative gap-4 bg-slate-100 p-4 rounded-lg border-b-2 border-l-[0.1px] border-r-[0.1px] border-slate-400 shadow-xl">
+                        <div className="flex relative gap-4 bg-slate-100 md:p-4 p-1 rounded-lg border-b-2 border-l-[0.1px] border-r-[0.1px] border-slate-400 shadow-xl">
                             <div className="relative -top-20 -left-10">
                                 <FaQuoteLeft
                                     color="black"
 
-                                    size={100}
+                                    size={80}
                                 />
                             </div>
 
                             <div className="flex flex-col">
-                                <div className="relative -left-10 text-black font-bold text-xl">
+                                <div className="relative -left-10 text-black font-bold md:text-xl text-base">
                                     &quot;It has taken great strain off of my husband trying to go up and down the stairs with COPD. Thank you!&quot;
                                 </div>
 
@@ -89,17 +89,17 @@ export function Reviews() {
                         </div>
 
                         {/* Review 3 (example structure) */}
-                        <div className="flex relative gap-4 bg-slate-100 p-4 rounded-lg border-b-2 border-l-[0.1px] border-r-[0.1px] border-slate-400 shadow-xl">
+                        <div className="flex relative gap-4 bg-slate-100 md:p-4 p-1 rounded-lg border-b-2 border-l-[0.1px] border-r-[0.1px] border-slate-400 shadow-xl">
                             <div className="relative -top-20 -left-10">
                                 <FaQuoteLeft
                                     color="black"
 
-                                    size={100}
+                                    size={80}
                                 />
                             </div>
 
                             <div className="flex flex-col">
-                                <div className="relative -left-10 text-black font-bold text-xl">
+                                <div className="relative -left-10 text-black font-bold md:text-xl text-base">
                                     &quot;I thought I&apos;d lose my independence once I had a stairlift fitted. In fact, it&apos;s the total opposite. I have more confidence and wish I&apos;d had one installed sooner in my home!&quot;
                                 </div>
 

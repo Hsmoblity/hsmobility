@@ -22,13 +22,32 @@ interface ProductItemProps {
     slug: string;
   };
 }
+const options = {
+  renderNode: {
+    'embedded-asset-block': (node: any) => {
+      const { file, title } = node.data.target.fields;
+      const imageUrl = file.url;
+      const imageAlt = title || 'Image';
+
+      return (
+        <img
+          src={`https:${imageUrl}`}
+          alt={imageAlt}
+          className="my-4 max-w-full"
+        />
+      );
+    },
+  },
+};
 
 const ProductItem: React.FC<ProductItemProps> = ({ product }) => {
   const [index, setIndex] = useState(0);
   const [hovering, setHovering] = useState(false);
   const { toggleCartVisibility } = useContext(CartVisibilityContext);
   const { dispatch } = useContext(CartContext); // Use CartContext to get the dispatch function
-  const renderSpecifications = product.productSpeciications ? documentToReactComponents(product.productSpeciications) : null;
+  const renderSpecifications = product.productSpeciications
+    ? documentToReactComponents(product.productSpeciications, options)
+    : null;
   console.log(renderSpecifications);
   // Handle adding to the cart
   const handleAddToCart = () => {
@@ -151,7 +170,7 @@ const ProductItem: React.FC<ProductItemProps> = ({ product }) => {
           <div className="flex flex-col gap-4 md:max-w-[600px] border-2 p-4 bg-white drop-shadow-lg m-4 rounded-lg">
             <div className="md:mt-10">
               <h2 className="text-2xl font-semibold text-gray-800 font-poppins ml-4">Our Bestsellers</h2>
-              <div className="flex flex-col gap-8 mt-6">
+              <div className="flex md:flex-row flex-col gap-8 mt-6">
                 <div className="flex flex-col items-center  pb-2">
                   <img
                     loading="lazy"
@@ -160,7 +179,7 @@ const ProductItem: React.FC<ProductItemProps> = ({ product }) => {
                     className="object-cover max-w-56 aspect-[1.61]"
                   />
                   <p className="text-xl uppercase text-gray-800 font-bold m-3">For curved staircases</p>
-                  <p className="text-lg text-slate-600 md:m-2 mx-8 text-center">The Acorn 180 stairlift for curved staircases</p>
+                  <p className="text-lg text-slate-600 md:m-2 mx-8 md:text-left text-center">The Acorn 180 stairlift for curved staircases</p>
                   <button className="relative inline-flex text-nowrap h-12 mt-4 overflow-hidden rounded-lg">
                     <span className="group inline-flex items-center bg-black text-white px-4 py-2">
                       <Link href="/product/acorn-stairlifts-acorn-130-straight-stairlift">Shop Now{" "}</Link>

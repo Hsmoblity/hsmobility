@@ -31,7 +31,7 @@ const Card = ({ title, shortDescription, affiliate, slug, price, featuredImage, 
     toggleCartVisibility();
   };
   // Determine the image to use
-  const imageSrc = (productPictures[0].fields.file.url || "/temp.webp");
+  const imageSrc = (productPictures[1].fields.file.url || "/temp.webp");
 
   return (
     <article className="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl transform hover:scale-105 duration-300">

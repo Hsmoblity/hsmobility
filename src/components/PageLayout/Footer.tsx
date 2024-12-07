@@ -45,7 +45,7 @@ const Footer = () => {
             </div>
             <p className="text-gray-500 text-base mb-10">HSMobility is your trusted source for a wide range of health services and mobility products designed to improve your quality of life.
 
-              <br /><br /><br />Please note: We are not manufacturers of Acron stairlifts but proud affiliate partners.</p>
+              <br /><br /><br />Please note: We are not manufacturers of <b>Acorn stairlifts</b> but proud affiliate partners.</p>
 
           </div>
           <div className="px-5 pt-5 sm:w-3/12">

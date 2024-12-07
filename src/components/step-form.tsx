@@ -14,7 +14,7 @@ export const FormDataSchema = z.object({
     lastName: z.string().min(1, 'Last name is required'),
     email: z.string().min(1, 'Email is required').email('Invalid email address'),
     phone: z.string().min(1, 'phone is required'),
-
+    note: z.string(),
     street: z.string().min(1, 'Street is required'),
     city: z.string().min(1, 'City is required'),
     state: z.string().min(1, 'State is required'),
@@ -59,9 +59,13 @@ export default function Form() {
                     "Content-Type": "application/json",
                     Accept: "application/json",
                 },
+                // body: JSON.stringify({
+                //     ...data,
+                //     access_key: "3c01bf6a-1e01-47f6-8337-e2155b97fa50",
+                // }),
                 body: JSON.stringify({
                     ...data,
-                    access_key: "3c01bf6a-1e01-47f6-8337-e2155b97fa50",
+                    access_key: "db44416b-ca9d-48e0-9d50-30bcbcfea335",
                 }),
             });
             if (!response.ok) {
@@ -347,6 +351,24 @@ export default function Form() {
                                                     {errors.zip.message}
                                                 </p>
                                             )}
+                                        </div>
+                                    </div>
+                                    <div className='col-span-full'>
+                                        <label
+                                            htmlFor='note'
+                                            className='block text-xl font-bold font-mono leading-6 tracking-wide text-gray-900 '
+                                        >
+                                            Additional Notes:
+                                        </label>
+                                        <div className='mt-2'>
+                                            <input
+                                                type='text'
+                                                id='note'
+                                                {...register('note')}
+
+                                                className='block w-full rounded-md border-0 py-1.5 pl-1 text-gray-900  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-black sm:text-xl sm:leading-6'
+                                            />
+
                                         </div>
                                     </div>
                                 </div>

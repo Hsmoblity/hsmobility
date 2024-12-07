@@ -92,11 +92,11 @@ const Header = () => {
             <img
               src="/Logo.png"
               alt="Logo"
-              className="w-48 object-contain"
+              className="w-64 object-cover"
             />
           </Link>
           {/* Navigation Menu */}
-          <nav className="flex space-x-6 text-lg">
+          <nav className="flex space-x-6 text-lg mt-2">
             {menuItems.map((item, index) => (
               <Link key={index} href={item.href} className="uppercase font-bold font-poppins tracking-widest">
                 <DrawOutlineButton>{item.name}</DrawOutlineButton>
