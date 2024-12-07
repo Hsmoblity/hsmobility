@@ -59,14 +59,11 @@ export default function Form() {
                     "Content-Type": "application/json",
                     Accept: "application/json",
                 },
-                // body: JSON.stringify({
-                //     ...data,
-                //     access_key: "3c01bf6a-1e01-47f6-8337-e2155b97fa50",
-                // }),
                 body: JSON.stringify({
                     ...data,
-                    access_key: "db44416b-ca9d-48e0-9d50-30bcbcfea335",
+                    access_key: "3c01bf6a-1e01-47f6-8337-e2155b97fa50",
                 }),
+
             });
             if (!response.ok) {
                 throw new Error("Submission failed");
