@@ -22,6 +22,7 @@ const Header = () => {
     { name: "Contact Us", href: "#contact-us" },
     { name: "Reviews", href: "#reviews" },
     { name: "FAQs", href: "#faq" },
+    { name: "Blogs", href: "/blogs" },
   ];
   const [lastScrollY, setLastScrollY] = useState(0);
   const [scrollDirection, setScrollDirection] = useState<string | null>(null);
@@ -92,7 +93,7 @@ const Header = () => {
             <img
               src="/Logo.png"
               alt="Logo"
-              className="w-64 object-cover"
+              className="w-52 object-cover"
             />
           </Link>
           {/* Navigation Menu */}

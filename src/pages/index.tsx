@@ -57,7 +57,7 @@ const Home = () => {
   }, []);
   return (
     <>
-      <MetaHead title="HSMobility | Health Services & Mobility Products for a Better Life" description="Explore hsMobility for a wide range of health services and mobility products designed to improve your quality of life. As affiliate partners of Acron stairlifts, we offer trusted solutions to help you regain independence and enhance your mobility." />
+      <MetaHead title=" Health Services & Mobility Products for a Better Life" description="Explore hsMobility for a wide range of health services and mobility products designed to improve your quality of life. As affiliate partners of Acron stairlifts, we offer trusted solutions to help you regain independence and enhance your mobility." />
       <Hero />
       <div className=" justify-center mx-auto">
         <h2 className=" text-center md:text-4xl text-2xl uppercase leading-8 text-gray-800 my-6 font-bold font-poppins max-w-4xl mx-auto ">Explore a curated selection of top-notch mobility products crafted to elevate your lifestyle.</h2>
