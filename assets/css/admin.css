@@ -1,0 +1,1075 @@
+/**
+ * HSM Plugin Admin Styles
+ *
+ * @package HSM
+ * @since 1.0.0
+ */
+
+/* ==========================================================================
+   WordPress Admin Layout Structure
+   ========================================================================== */
+
+/* WordPress Admin Columns Layout */
+.wp-admin-columns {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.wp-admin-column-left {
+    flex: 2;
+    min-width: 0;
+}
+
+.wp-admin-column-right {
+    flex: 1;
+    min-width: 0;
+}
+
+/* WordPress Admin Panels */
+.postbox {
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.postbox-header {
+    background: #f6f7f7;
+    border-bottom: 1px solid #c3c4c7;
+    padding: 12px 20px;
+    margin: 0;
+}
+
+.postbox-header .hndle {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1d2327;
+    cursor: default;
+}
+
+.postbox .inside {
+    padding: 20px;
+    margin: 0;
+}
+
+/* Meta Box Sortables */
+.meta-box-sortables {
+    margin: 0;
+}
+
+.meta-box-sortables .postbox {
+    margin-bottom: 20px;
+}
+
+.hsm-admin-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #1d2327;
+}
+
+.hsm-admin-title .dashicons {
+    font-size: 28px;
+    color: #2271b1;
+}
+
+.hsm-version {
+    background: #2271b1;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+/* ==========================================================================
+   Header and Status Indicators
+   ========================================================================== */
+
+.hsm-admin-header {
+    background: white;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.hsm-status-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.hsm-status-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid #c3c4c7;
+    background: #f9f9f9;
+    transition: all 0.3s ease;
+    min-width: 0;
+    overflow: hidden;
+    word-wrap: break-word;
+    box-sizing: border-box;
+}
+
+.hsm-status-item .status-text,
+.hsm-status-item .status-detail {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    flex: 1;
+    min-width: 0;
+}
+
+.hsm-status-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hsm-status-item.status-ok {
+    border-color: #00a32a;
+    background: #f0f8f0;
+}
+
+.hsm-status-item.status-warning {
+    border-color: #dba617;
+    background: #fef8e7;
+}
+
+.hsm-status-item.status-error {
+    border-color: #d63638;
+    background: #fef0f0;
+}
+
+.hsm-status-item .dashicons {
+    font-size: 20px;
+}
+
+.hsm-status-item.status-ok .dashicons {
+    color: #00a32a;
+}
+
+.hsm-status-item.status-warning .dashicons {
+    color: #dba617;
+}
+
+.hsm-status-item.status-error .dashicons {
+    color: #d63638;
+}
+
+.status-label {
+    font-weight: 600;
+    color: #1d2327;
+}
+
+.status-value {
+    font-size: 14px;
+    color: #646970;
+}
+
+/* ==========================================================================
+   Navigation Tabs
+   ========================================================================== */
+
+.hsm-nav-tabs {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #c3c4c7;
+}
+
+.hsm-nav-tabs .nav-tab {
+    padding: 12px 20px;
+    font-weight: 500;
+    border-radius: 4px 4px 0 0;
+    margin-right: 5px;
+    transition: all 0.3s ease;
+}
+
+.hsm-nav-tabs .nav-tab:hover {
+    background: #f6f7f7;
+    border-color: #c3c4c7;
+}
+
+.hsm-nav-tabs .nav-tab-active {
+    background: white;
+    border-bottom-color: white;
+    color: #2271b1;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   Dashboard Content
+   ========================================================================== */
+
+.hsm-dashboard-content {
+    background: white;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.hsm-dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Fix for widget overflow */
+.hsm-widget {
+    min-width: 0;
+    overflow: hidden;
+    word-wrap: break-word;
+    box-sizing: border-box;
+}
+
+.hsm-widget h3 {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+.hsm-dashboard-widget {
+    background: #f9f9f9;
+    border: 1px solid #c3c4c7;
+    border-radius: 6px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.hsm-dashboard-widget:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.hsm-dashboard-widget h2 {
+    margin: 0 0 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #1d2327;
+    border-bottom: 2px solid #2271b1;
+    padding-bottom: 8px;
+}
+
+/* ==========================================================================
+   ASCII Map Widget
+   ========================================================================== */
+
+.hsm-ascii-map-widget {
+    grid-column: 1 / -1;
+    background: #1d2327;
+    color: #00ff00;
+    font-family: 'Courier New', monospace;
+}
+
+.hsm-ascii-map-widget h2 {
+    color: #00ff00;
+    border-bottom-color: #00ff00;
+}
+
+.hsm-ascii-map-container {
+    overflow-x: auto;
+    padding: 10px;
+    background: #000;
+    border-radius: 4px;
+    border: 1px solid #333;
+}
+
+.hsm-ascii-map {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.2;
+    color: #00ff00;
+    white-space: pre;
+    font-family: 'Courier New', monospace;
+}
+
+/* ==========================================================================
+   Stats Widget
+   ========================================================================== */
+
+.hsm-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 15px;
+}
+
+.hsm-stat-item {
+    text-align: center;
+    padding: 15px;
+    background: white;
+    border-radius: 6px;
+    border: 1px solid #c3c4c7;
+    transition: all 0.3s ease;
+}
+
+.hsm-stat-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.stat-number {
+    font-size: 28px;
+    font-weight: 700;
+    color: #2271b1;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #646970;
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   Activity Widget
+   ========================================================================== */
+
+.hsm-activity-list {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.hsm-activity-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    margin-bottom: 8px;
+    background: white;
+    border-radius: 4px;
+    border-left: 4px solid #c3c4c7;
+    transition: all 0.3s ease;
+}
+
+.hsm-activity-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hsm-activity-item.success {
+    border-left-color: #00a32a;
+}
+
+.hsm-activity-item.error {
+    border-left-color: #d63638;
+}
+
+.activity-action {
+    font-weight: 500;
+    color: #1d2327;
+}
+
+.activity-time {
+    font-size: 12px;
+    color: #646970;
+}
+
+.activity-error {
+    font-size: 12px;
+    color: #d63638;
+    margin-top: 4px;
+    font-style: italic;
+}
+
+/* ==========================================================================
+   Health Widget
+   ========================================================================== */
+
+.hsm-health-indicators {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.hsm-health-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    background: white;
+    border-radius: 4px;
+    border: 1px solid #c3c4c7;
+    transition: all 0.3s ease;
+}
+
+.hsm-health-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hsm-health-item.ok {
+    border-left: 4px solid #00a32a;
+}
+
+.hsm-health-item.warning {
+    border-left: 4px solid #dba617;
+}
+
+.hsm-health-item.error {
+    border-left: 4px solid #d63638;
+}
+
+.health-icon {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.hsm-health-item.ok .health-icon {
+    color: #00a32a;
+}
+
+.hsm-health-item.warning .health-icon {
+    color: #dba617;
+}
+
+.hsm-health-item.error .health-icon {
+    color: #d63638;
+}
+
+.health-name {
+    font-weight: 500;
+    color: #1d2327;
+    flex: 1;
+}
+
+.health-status {
+    font-size: 14px;
+    color: #646970;
+}
+
+/* ==========================================================================
+   Configuration Content
+   ========================================================================== */
+
+.hsm-configuration-content {
+    background: white;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.hsm-config-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.hsm-config-section {
+    background: #f9f9f9;
+    border: 1px solid #c3c4c7;
+    border-radius: 6px;
+    padding: 20px;
+}
+
+.hsm-config-section h2 {
+    margin: 0 0 20px 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #1d2327;
+    border-bottom: 2px solid #2271b1;
+    padding-bottom: 10px;
+}
+
+.hsm-config-section .form-table {
+    margin-top: 0;
+}
+
+.hsm-config-section .form-table th {
+    width: 200px;
+    font-weight: 600;
+    color: #1d2327;
+}
+
+.hsm-config-section .form-table td {
+    padding: 15px 10px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    box-sizing: border-box;
+}
+
+.hsm-config-section .form-table input[type="text"],
+.hsm-config-section .form-table input[type="url"],
+.hsm-config-section .form-table input[type="email"],
+.hsm-config-section .form-table textarea {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    word-wrap: break-word;
+}
+
+.hsm-config-section .description {
+    margin-top: 8px;
+    font-style: italic;
+    color: #646970;
+}
+
+/* ==========================================================================
+   Monitoring Content
+   ========================================================================== */
+
+.hsm-monitoring-content {
+    background: white;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.hsm-endpoint-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.hsm-endpoint-item {
+    background: #f9f9f9;
+    border: 1px solid #c3c4c7;
+    border-radius: 6px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.hsm-endpoint-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.hsm-endpoint-item h3 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1d2327;
+}
+
+.hsm-endpoint-item p {
+    margin: 0 0 15px 0;
+    font-family: 'Courier New', monospace;
+    background: #1d2327;
+    color: #00ff00;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.endpoint-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.status-indicator {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.status-indicator.status-ok {
+    color: #00a32a;
+}
+
+.status-indicator.status-error {
+    color: #d63638;
+}
+
+/* ==========================================================================
+   Logs Content
+   ========================================================================== */
+
+.hsm-logs-content {
+    background: white;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.hsm-logs-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #2271b1;
+}
+
+.hsm-logs-header h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #1d2327;
+}
+
+.hsm-logs-table {
+    overflow-x: auto;
+}
+
+.hsm-logs-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.hsm-logs-table th {
+    background: #f6f7f7;
+    font-weight: 600;
+    color: #1d2327;
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #c3c4c7;
+}
+
+.hsm-logs-table td {
+    padding: 12px;
+    border-bottom: 1px solid #f0f0f1;
+    vertical-align: top;
+}
+
+.hsm-logs-table tr:hover {
+    background: #f9f9f9;
+}
+
+.status-badge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.status-badge.status-success {
+    background: #f0f8f0;
+    color: #00a32a;
+    border: 1px solid #00a32a;
+}
+
+.status-badge.status-error {
+    background: #fef0f0;
+    color: #d63638;
+    border: 1px solid #d63638;
+}
+
+/* ==========================================================================
+   Help Content
+   ========================================================================== */
+
+.hsm-help-content {
+    background: white;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.hsm-help-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.hsm-help-section {
+    background: #f9f9f9;
+    border: 1px solid #c3c4c7;
+    border-radius: 6px;
+    padding: 20px;
+}
+
+.hsm-help-section h3 {
+    margin: 0 0 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #1d2327;
+    border-bottom: 2px solid #2271b1;
+    padding-bottom: 8px;
+}
+
+.hsm-help-section ol,
+.hsm-help-section ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.hsm-help-section li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.hsm-help-section code {
+    background: #1d2327;
+    color: #00ff00;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+}
+
+/* ==========================================================================
+   Responsive Design - Enhanced
+   ========================================================================== */
+
+/* Base responsive wrapper */
+.hsm-admin-dashboard {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Large screens (1024px and up) */
+@media (min-width: 1024px) {
+    .wp-admin-columns {
+        flex-direction: row;
+        gap: 25px;
+    }
+    
+    .wp-admin-column-left {
+        flex: 2;
+    }
+    
+    .wp-admin-column-right {
+        flex: 1;
+    }
+    
+    .hsm-status-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+    
+    .hsm-stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+    
+    .hsm-endpoint-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+}
+
+/* Medium screens (768px to 1023px) */
+@media (max-width: 1023px) and (min-width: 769px) {
+    .wp-admin-columns {
+        flex-direction: row;
+        gap: 20px;
+    }
+    
+    .wp-admin-column-left {
+        flex: 2;
+    }
+    
+    .wp-admin-column-right {
+        flex: 1;
+    }
+    
+    .hsm-status-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+    
+    .hsm-stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+    
+    .hsm-endpoint-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .hsm-ascii-map {
+        font-size: 11px;
+    }
+}
+
+/* Small screens (768px and below) */
+@media (max-width: 768px) {
+    .wp-admin-columns {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .wp-admin-column-left,
+    .wp-admin-column-right {
+        flex: 1;
+    }
+    
+    .hsm-status-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .hsm-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .hsm-endpoint-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .hsm-logs-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+    
+    .hsm-ascii-map {
+        font-size: 10px;
+    }
+    
+    .hsm-nav-tabs {
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    
+    .hsm-nav-tabs .nav-tab {
+        display: inline-block;
+        margin-right: 5px;
+        min-width: auto;
+    }
+    
+    .hsm-dashboard-widget {
+        padding: 15px;
+    }
+    
+    .hsm-config-section {
+        padding: 15px;
+    }
+    
+    .hsm-endpoint-item {
+        padding: 15px;
+    }
+    
+    .hsm-help-section {
+        padding: 15px;
+    }
+    
+    /* Fix table responsiveness */
+    .hsm-logs-table {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .hsm-logs-table table {
+        min-width: 600px;
+    }
+    
+    /* Fix form table responsiveness */
+    .hsm-config-section .form-table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .hsm-config-section .form-table th,
+    .hsm-config-section .form-table td {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+    }
+    
+    .hsm-config-section .form-table th {
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+}
+
+/* Extra small screens (480px and below) */
+@media (max-width: 480px) {
+    .hsm-admin-dashboard {
+        padding: 5px;
+    }
+    
+    .hsm-stats-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+    
+    .hsm-ascii-map {
+        font-size: 8px;
+    }
+    
+    .hsm-admin-title {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    
+    .hsm-dashboard-widget {
+        padding: 10px;
+    }
+    
+    .hsm-config-section {
+        padding: 10px;
+    }
+    
+    .hsm-endpoint-item {
+        padding: 10px;
+    }
+    
+    .hsm-help-section {
+        padding: 10px;
+    }
+    
+    .hsm-nav-tabs .nav-tab {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+    
+    .hsm-status-item {
+        padding: 10px;
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+    }
+    
+    .hsm-health-item {
+        padding: 10px;
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+    }
+    
+    .hsm-stat-item {
+        padding: 10px;
+    }
+    
+    .stat-number {
+        font-size: 24px;
+    }
+    
+    .stat-label {
+        font-size: 12px;
+    }
+}
+
+/* Ultra small screens (320px and below) */
+@media (max-width: 320px) {
+    .hsm-admin-dashboard {
+        padding: 2px;
+    }
+    
+    .hsm-ascii-map {
+        font-size: 6px;
+        line-height: 1.1;
+    }
+    
+    .hsm-admin-title {
+        font-size: 18px;
+    }
+    
+    .hsm-dashboard-widget {
+        padding: 8px;
+    }
+    
+    .hsm-config-section {
+        padding: 8px;
+    }
+    
+    .hsm-endpoint-item {
+        padding: 8px;
+    }
+    
+    .hsm-help-section {
+        padding: 8px;
+    }
+    
+    .hsm-nav-tabs .nav-tab {
+        padding: 6px 8px;
+        font-size: 12px;
+    }
+}
+
+/* Fix for WordPress admin sidebar overlap */
+@media (max-width: 960px) {
+    .hsm-admin-dashboard {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+/* Landscape orientation fixes */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hsm-dashboard-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .hsm-status-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+    
+    .hsm-ascii-map {
+        font-size: 8px;
+        max-height: 200px;
+        overflow-y: auto;
+    }
+}
+
+/* ==========================================================================
+   Accessibility
+   ========================================================================== */
+
+.hsm-admin-wrap *:focus {
+    outline: 2px solid #2271b1;
+    outline-offset: 2px;
+}
+
+.hsm-ascii-map {
+    /* Ensure ASCII map is accessible to screen readers */
+    font-family: 'Courier New', monospace;
+    line-height: 1.2;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .hsm-dashboard-widget,
+    .hsm-config-section,
+    .hsm-endpoint-item,
+    .hsm-help-section {
+        border: 2px solid #000;
+    }
+    
+    .hsm-status-item.status-ok {
+        border-color: #000;
+        background: #fff;
+    }
+    
+    .hsm-ascii-map {
+        color: #000;
+        background: #fff;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .hsm-status-item,
+    .hsm-dashboard-widget,
+    .hsm-stat-item,
+    .hsm-activity-item,
+    .hsm-health-item,
+    .hsm-endpoint-item {
+        transition: none;
+    }
+    
+    .hsm-status-item:hover,
+    .hsm-dashboard-widget:hover,
+    .hsm-stat-item:hover,
+    .hsm-activity-item:hover,
+    .hsm-health-item:hover,
+    .hsm-endpoint-item:hover {
+        transform: none;
+    }
+}
